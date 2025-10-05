@@ -3,6 +3,7 @@
     "languages": [
       "en"
     ],
+    "forceNER": true,
     "tag": "nlp",
     "threshold": 0.5,
     "autoLoad": true,
@@ -34,52 +35,70 @@
           "useStemDict": true
         },
         "stemDict": {
-          "0,framer,info,section": {
+          "framer,is,what": {
+            "intent": "framer.info",
+            "domain": "default"
+          },
+          "about,framer,me,tell": {
+            "intent": "framer.info",
+            "domain": "default"
+          },
+          "is,react,what": {
+            "intent": "react.info",
+            "domain": "default"
+          },
+          "about,me,react,tell": {
+            "intent": "react.info",
+            "domain": "default"
+          },
+          "0,framer,section": {
             "intent": "framer.section0",
             "domain": "default"
           },
-          "0,info,react,section": {
+          "0,react,section": {
             "intent": "react.section0",
             "domain": "default"
           },
-          "1,info,react,section": {
+          "1,react,section": {
             "intent": "react.section1",
             "domain": "default"
           },
-          "2,info,react,section": {
+          "2,react,section": {
             "intent": "react.section2",
             "domain": "default"
           },
-          "3,info,react,section": {
+          "3,react,section": {
             "intent": "react.section3",
             "domain": "default"
           },
-          "4,info,react,section": {
+          "4,react,section": {
             "intent": "react.section4",
             "domain": "default"
           },
-          "5,info,react,section": {
+          "5,react,section": {
             "intent": "react.section5",
             "domain": "default"
           },
-          "6,info,react,section": {
+          "6,react,section": {
             "intent": "react.section6",
             "domain": "default"
           },
-          "7,info,react,section": {
+          "7,react,section": {
             "intent": "react.section7",
             "domain": "default"
           },
-          "8,info,react,section": {
+          "8,react,section": {
             "intent": "react.section8",
             "domain": "default"
           },
-          "9,info,react,section": {
+          "9,react,section": {
             "intent": "react.section9",
             "domain": "default"
           }
         },
         "intentDict": {
+          "framer.info": "default",
+          "react.info": "default",
           "framer.section0": "default",
           "react.section0": "default",
           "react.section1": "default",
@@ -95,57 +114,77 @@
         "sentences": [
           {
             "domain": "default",
-            "utterance": "Framer info section 0",
+            "utterance": "what is framer",
+            "intent": "framer.info"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me about framer",
+            "intent": "framer.info"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is react",
+            "intent": "react.info"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me about react",
+            "intent": "react.info"
+          },
+          {
+            "domain": "default",
+            "utterance": "framer section 0",
             "intent": "framer.section0"
           },
           {
             "domain": "default",
-            "utterance": "React info section 0",
+            "utterance": "react section 0",
             "intent": "react.section0"
           },
           {
             "domain": "default",
-            "utterance": "React info section 1",
+            "utterance": "react section 1",
             "intent": "react.section1"
           },
           {
             "domain": "default",
-            "utterance": "React info section 2",
+            "utterance": "react section 2",
             "intent": "react.section2"
           },
           {
             "domain": "default",
-            "utterance": "React info section 3",
+            "utterance": "react section 3",
             "intent": "react.section3"
           },
           {
             "domain": "default",
-            "utterance": "React info section 4",
+            "utterance": "react section 4",
             "intent": "react.section4"
           },
           {
             "domain": "default",
-            "utterance": "React info section 5",
+            "utterance": "react section 5",
             "intent": "react.section5"
           },
           {
             "domain": "default",
-            "utterance": "React info section 6",
+            "utterance": "react section 6",
             "intent": "react.section6"
           },
           {
             "domain": "default",
-            "utterance": "React info section 7",
+            "utterance": "react section 7",
             "intent": "react.section7"
           },
           {
             "domain": "default",
-            "utterance": "React info section 8",
+            "utterance": "react section 8",
             "intent": "react.section8"
           },
           {
             "domain": "default",
-            "utterance": "React info section 9",
+            "utterance": "react section 9",
             "intent": "react.section9"
           }
         ],
@@ -173,12 +212,18 @@
               "7": 1,
               "8": 1,
               "9": 1,
+              "what": 1,
+              "is": 1,
               "framer": 1,
-              "info": 1,
-              "section": 1,
-              "react": 1
+              "tell": 1,
+              "me": 1,
+              "about": 1,
+              "react": 1,
+              "section": 1
             },
             "intents": {
+              "framer.info": 1,
+              "react.info": 1,
               "framer.section0": 1,
               "react.section0": 1,
               "react.section1": 1,
@@ -192,70 +237,75 @@
               "react.section9": 1
             },
             "intentFeatures": {
+              "framer.info": {
+                "what": 1,
+                "is": 1,
+                "framer": 1,
+                "tell": 1,
+                "me": 1,
+                "about": 1
+              },
+              "react.info": {
+                "what": 1,
+                "is": 1,
+                "react": 1,
+                "tell": 1,
+                "me": 1,
+                "about": 1
+              },
               "framer.section0": {
                 "0": 1,
                 "framer": 1,
-                "info": 1,
                 "section": 1
               },
               "react.section0": {
                 "0": 1,
                 "react": 1,
-                "info": 1,
                 "section": 1
               },
               "react.section1": {
                 "1": 1,
                 "react": 1,
-                "info": 1,
                 "section": 1
               },
               "react.section2": {
                 "2": 1,
                 "react": 1,
-                "info": 1,
                 "section": 1
               },
               "react.section3": {
                 "3": 1,
                 "react": 1,
-                "info": 1,
                 "section": 1
               },
               "react.section4": {
                 "4": 1,
                 "react": 1,
-                "info": 1,
                 "section": 1
               },
               "react.section5": {
                 "5": 1,
                 "react": 1,
-                "info": 1,
                 "section": 1
               },
               "react.section6": {
                 "6": 1,
                 "react": 1,
-                "info": 1,
                 "section": 1
               },
               "react.section7": {
                 "7": 1,
                 "react": 1,
-                "info": 1,
                 "section": 1
               },
               "react.section8": {
                 "8": 1,
                 "react": 1,
-                "info": 1,
                 "section": 1
               },
               "react.section9": {
                 "9": 1,
                 "react": 1,
-                "info": 1,
                 "section": 1
               }
             },
@@ -291,11 +341,32 @@
               "9": [
                 "react.section9"
               ],
+              "what": [
+                "framer.info",
+                "react.info"
+              ],
+              "is": [
+                "framer.info",
+                "react.info"
+              ],
               "framer": [
+                "framer.info",
                 "framer.section0"
               ],
-              "info": [
-                "framer.section0",
+              "tell": [
+                "framer.info",
+                "react.info"
+              ],
+              "me": [
+                "framer.info",
+                "react.info"
+              ],
+              "about": [
+                "framer.info",
+                "react.info"
+              ],
+              "react": [
+                "react.info",
                 "react.section0",
                 "react.section1",
                 "react.section2",
@@ -309,18 +380,6 @@
               ],
               "section": [
                 "framer.section0",
-                "react.section0",
-                "react.section1",
-                "react.section2",
-                "react.section3",
-                "react.section4",
-                "react.section5",
-                "react.section6",
-                "react.section7",
-                "react.section8",
-                "react.section9"
-              ],
-              "react": [
                 "react.section0",
                 "react.section1",
                 "react.section2",
@@ -346,11 +405,15 @@
                 "log": true
               },
               "features": [
-                "0",
+                "what",
+                "is",
                 "framer",
-                "info",
-                "section",
+                "tell",
+                "me",
+                "about",
                 "react",
+                "0",
+                "section",
                 "1",
                 "2",
                 "3",
@@ -362,6 +425,8 @@
                 "9"
               ],
               "intents": [
+                "framer.info",
+                "react.info",
                 "framer.section0",
                 "react.section0",
                 "react.section1",
@@ -376,191 +441,277 @@
               ],
               "perceptrons": [
                 [
-                  3.01833438873291,
-                  7.789850234985352,
-                  1.3740686178207397,
-                  1.3740686178207397,
-                  -6.417171955108643,
-                  -0.3703438639640808,
-                  -0.3210303783416748,
-                  -0.25682803988456726,
-                  -0.20344038307666779,
-                  -0.13855606317520142,
-                  -0.09446049481630325,
-                  -0.06715188920497894,
-                  -0.037139929831027985,
-                  -0.020711656659841537,
-                  0.6864434622927885
+                  3.0622994899749756,
+                  3.0622994899749756,
+                  7.64479923248291,
+                  2.041738271713257,
+                  2.041738271713257,
+                  2.041738271713257,
+                  -6.628450393676758,
+                  -4.058988094329834,
+                  -4.087327480316162,
+                  -0.01088002324104309,
+                  -0.0036551456432789564,
+                  -0.0018715737387537956,
+                  -0.000820886401925236,
+                  -0.0002314782905159518,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0.5078783364699987
                 ],
                 [
-                  11.977617263793945,
-                  -7.340378284454346,
-                  -1.6769932508468628,
-                  -1.6769932508468628,
-                  5.702723503112793,
-                  -1.478591799736023,
-                  -1.5451418161392212,
-                  -1.5673505067825317,
-                  -1.5684937238693237,
-                  -1.5573866367340088,
-                  -1.5368775129318237,
-                  -1.5075443983078003,
-                  -1.4692840576171875,
-                  -1.4219911098480225,
-                  -0.842448549056249
+                  3.677459716796875,
+                  3.677459716796875,
+                  -7.241896629333496,
+                  2.451911449432373,
+                  2.451911449432373,
+                  2.451911449432373,
+                  7.029473304748535,
+                  -0.6882616281509399,
+                  -6.342792510986328,
+                  -0.7105259299278259,
+                  -0.6914560198783875,
+                  -0.6584816575050354,
+                  -0.6282986402511597,
+                  -0.6064760088920593,
+                  -0.5919058322906494,
+                  -0.583526074886322,
+                  -0.5797171592712402,
+                  -0.5751473903656006,
+                  -0.10659961535828417
                 ],
                 [
-                  -1.3045198917388916,
-                  -0.13918815553188324,
-                  0.3443593680858612,
-                  0.3443593680858612,
-                  0.4868305027484894,
-                  12.8804349899292,
-                  -1.3463162183761597,
-                  -1.490450382232666,
-                  -1.5066202878952026,
-                  -1.4457600116729736,
-                  -1.3864259719848633,
-                  -1.3565571308135986,
-                  -1.345853328704834,
-                  -1.3318589925765991,
-                  0.1718424855082818
+                  -2.8366873264312744,
+                  -2.8366873264312744,
+                  6.3436713218688965,
+                  -1.902279019355774,
+                  -1.902279019355774,
+                  -1.902279019355774,
+                  -7.520739555358887,
+                  4.718800067901611,
+                  3.5694692134857178,
+                  -0.20432688295841217,
+                  -0.18269599974155426,
+                  -0.16662892699241638,
+                  -0.1269507110118866,
+                  -0.10143487900495529,
+                  -0.08634404093027115,
+                  -0.06143323332071304,
+                  -0.05131754279136658,
+                  -0.035392094403505325,
+                  -0.5924191209249315
                 ],
                 [
-                  -1.3304601907730103,
-                  -0.15724320709705353,
-                  0.3399311304092407,
-                  0.3399311304092407,
-                  0.5007225871086121,
-                  -1.304397463798523,
-                  12.879670143127441,
-                  -1.3468866348266602,
-                  -1.493000864982605,
-                  -1.50723397731781,
-                  -1.4455633163452148,
-                  -1.386636734008789,
-                  -1.3570259809494019,
-                  -1.346335530281067,
-                  0.17010179667464687
+                  -1.3395017385482788,
+                  -1.3395017385482788,
+                  -8.106637001037598,
+                  -0.9028494358062744,
+                  -0.9028494358062744,
+                  -0.9028494358062744,
+                  4.581304550170898,
+                  11.812775611877441,
+                  -1.3190863132476807,
+                  -1.4299054145812988,
+                  -1.4838385581970215,
+                  -1.5009071826934814,
+                  -1.4998235702514648,
+                  -1.4887245893478394,
+                  -1.4710437059402466,
+                  -1.4481782913208008,
+                  -1.4206922054290771,
+                  -1.3888509273529053,
+                  -1.792312113194863
                 ],
                 [
-                  -1.347133755683899,
-                  -0.18265840411186218,
-                  0.33262693881988525,
-                  0.33262693881988525,
-                  0.5190674066543579,
-                  -1.3308764696121216,
-                  -1.3057020902633667,
-                  12.878565788269043,
-                  -1.3479602336883545,
-                  -1.4934223890304565,
-                  -1.506888508796692,
-                  -1.4454519748687744,
-                  -1.3872437477111816,
-                  -1.3579785823822021,
-                  0.16675248537880605
+                  -0.28805533051490784,
+                  -0.28805533051490784,
+                  -0.15223349630832672,
+                  -0.19186519086360931,
+                  -0.19186519086360931,
+                  -0.19186519086360931,
+                  0.4364263713359833,
+                  -1.2940884828567505,
+                  0.7613345980644226,
+                  12.877723693847656,
+                  -1.3353822231292725,
+                  -1.3785566091537476,
+                  -1.3925752639770508,
+                  -1.369974970817566,
+                  -1.3485549688339233,
+                  -1.339897871017456,
+                  -1.3327383995056152,
+                  -1.3207205533981323,
+                  0.14017486893204434
                 ],
                 [
-                  -1.361788272857666,
-                  -0.2138718217611313,
-                  0.3219887912273407,
-                  0.3219887912273407,
-                  0.5477027297019958,
-                  -1.3482686281204224,
-                  -1.33315908908844,
-                  -1.3078620433807373,
-                  12.876425743103027,
-                  -1.3500676155090332,
-                  -1.4918428659439087,
-                  -1.5050338506698608,
-                  -1.4443778991699219,
-                  -1.3875482082366943,
-                  0.16143892404143095
+                  -0.29254522919654846,
+                  -0.29254522919654846,
+                  -0.17322206497192383,
+                  -0.1947604864835739,
+                  -0.1947604864835739,
+                  -0.1947604864835739,
+                  0.44666552543640137,
+                  -1.3146700859069824,
+                  0.7585058212280273,
+                  -1.2958474159240723,
+                  12.876504898071289,
+                  -1.3358561992645264,
+                  -1.3809189796447754,
+                  -1.3938053846359253,
+                  -1.3706425428390503,
+                  -1.3488764762878418,
+                  -1.3398919105529785,
+                  -1.3327115774154663,
+                  0.13548501839924879
                 ],
                 [
-                  -1.3997321128845215,
-                  -0.26430532336235046,
-                  0.3062995374202728,
-                  0.3062995374202728,
-                  0.5883606672286987,
-                  -1.3595908880233765,
-                  -1.3501399755477905,
-                  -1.3346562385559082,
-                  -1.3092371225357056,
-                  12.875085830688477,
-                  -1.3513935804367065,
-                  -1.4909045696258545,
-                  -1.5038470029830933,
-                  -1.4436430931091309,
-                  0.15358932842201906
+                  -0.300648957490921,
+                  -0.300648957490921,
+                  -0.19772514700889587,
+                  -0.19995014369487762,
+                  -0.19995014369487762,
+                  -0.19995014369487762,
+                  0.4577876925468445,
+                  -1.3296849727630615,
+                  0.756041944026947,
+                  -1.3154890537261963,
+                  -1.2968000173568726,
+                  12.875982284545898,
+                  -1.3362613916397095,
+                  -1.3818613290786743,
+                  -1.3941566944122314,
+                  -1.370849847793579,
+                  -1.3490548133850098,
+                  -1.340162992477417,
+                  0.12778064893102073
                 ],
                 [
-                  -1.4770252704620361,
-                  -0.31254833936691284,
-                  0.28817620873451233,
-                  0.28817620873451233,
-                  0.6337874531745911,
-                  -1.3844950199127197,
-                  -1.3611512184143066,
-                  -1.3503533601760864,
-                  -1.3348170518875122,
-                  -1.309376835823059,
-                  12.874982833862305,
-                  -1.351431965827942,
-                  -1.488415002822876,
-                  -1.5013304948806763,
-                  0.14452536782772352
+                  -0.3125588893890381,
+                  -0.3125588893890381,
+                  -0.23026300966739655,
+                  -0.20714643597602844,
+                  -0.20714643597602844,
+                  -0.20714643597602844,
+                  0.4700350761413574,
+                  -1.3391318321228027,
+                  0.7537582516670227,
+                  -1.329857349395752,
+                  -1.3162927627563477,
+                  -1.2972971200942993,
+                  12.875553131103516,
+                  -1.3366894721984863,
+                  -1.38209867477417,
+                  -1.3940972089767456,
+                  -1.3707184791564941,
+                  -1.3493107557296753,
+                  0.11719537902161399
                 ],
                 [
-                  -1.5687412023544312,
-                  -0.3669692575931549,
-                  0.2718833088874817,
-                  0.2718833088874817,
-                  0.6722195744514465,
-                  -1.4448477029800415,
-                  -1.3891478776931763,
-                  -1.3593690395355225,
-                  -1.3481477499008179,
-                  -1.332581639289856,
-                  -1.307110071182251,
-                  12.877305030822754,
-                  -1.349030613899231,
-                  -1.4879705905914307,
-                  0.13637583122587674
+                  -0.3329010605812073,
+                  -0.3329010605812073,
+                  -0.2670111656188965,
+                  -0.22266742587089539,
+                  -0.22266742587089539,
+                  -0.22266742587089539,
+                  0.4765267074108124,
+                  -1.3483182191848755,
+                  0.7637822031974792,
+                  -1.3382314443588257,
+                  -1.3297897577285767,
+                  -1.3158930540084839,
+                  -1.29678213596344,
+                  12.876126289367676,
+                  -1.3360649347305298,
+                  -1.3799593448638916,
+                  -1.3918912410736084,
+                  -1.3688764572143555,
+                  0.10016691243719802
                 ],
                 [
-                  -1.579140067100525,
-                  -0.3533799648284912,
-                  0.26731932163238525,
-                  0.26731932163238525,
-                  0.6815469264984131,
-                  -1.4955462217330933,
-                  -1.4426769018173218,
-                  -1.3871777057647705,
-                  -1.3572503328323364,
-                  -1.3459960222244263,
-                  -1.330515742301941,
-                  -1.3050686120986938,
-                  12.87936782836914,
-                  -1.3469116687774658,
-                  0.13409355778961057
+                  -0.35946032404899597,
+                  -0.35946032404899597,
+                  -0.3025926649570465,
+                  -0.25634366273880005,
+                  -0.25634366273880005,
+                  -0.25634366273880005,
+                  0.47401535511016846,
+                  -1.3722844123840332,
+                  0.7866740226745605,
+                  -1.342636227607727,
+                  -1.3361847400665283,
+                  -1.3273578882217407,
+                  -1.3133175373077393,
+                  -1.2941533327102661,
+                  12.878776550292969,
+                  -1.3334050178527832,
+                  -1.3770122528076172,
+                  -1.388946294784546,
+                  0.07723680261727879
                 ],
                 [
-                  -1.3891618251800537,
-                  -0.29642248153686523,
-                  0.28858548402786255,
-                  0.28858548402786255,
-                  0.6334393620491028,
-                  -1.5072523355484009,
-                  -1.511715292930603,
-                  -1.4218542575836182,
-                  -1.3576112985610962,
-                  -1.3579204082489014,
-                  -1.3506972789764404,
-                  -1.3372029066085815,
-                  -1.3125685453414917,
-                  12.871671676635742,
-                  0.14521876468583753
+                  -0.38658955693244934,
+                  -0.38658955693244934,
+                  -0.34184855222702026,
+                  -0.2886143624782562,
+                  -0.2886143624782562,
+                  -0.2886143624782562,
+                  0.466942697763443,
+                  -1.4042376279830933,
+                  0.8125482797622681,
+                  -1.3587689399719238,
+                  -1.340596079826355,
+                  -1.332808494567871,
+                  -1.3239755630493164,
+                  -1.3099370002746582,
+                  -1.2907569408416748,
+                  12.882205963134766,
+                  -1.3299301862716675,
+                  -1.373777151107788,
+                  0.055021043607909256
+                ],
+                [
+                  -0.3985326886177063,
+                  -0.3985326886177063,
+                  -0.3480617105960846,
+                  -0.3222366273403168,
+                  -0.3222366273403168,
+                  -0.3222366273403168,
+                  0.45994532108306885,
+                  -1.4091603755950928,
+                  0.8291699886322021,
+                  -1.3762609958648682,
+                  -1.3549565076828003,
+                  -1.3374519348144531,
+                  -1.329728603363037,
+                  -1.3209131956100464,
+                  -1.306864619255066,
+                  -1.2876498699188232,
+                  12.885368347167969,
+                  -1.3266931772232056,
+                  0.042264434209477085
+                ],
+                [
+                  -0.3547455370426178,
+                  -0.3547455370426178,
+                  -0.3281130790710449,
+                  -0.32833486795425415,
+                  -0.32833486795425415,
+                  -0.32833486795425415,
+                  0.45660361647605896,
+                  -1.3348087072372437,
+                  0.8205936551094055,
+                  -1.3827937841415405,
+                  -1.3833907842636108,
+                  -1.3589484691619873,
+                  -1.3404176235198975,
+                  -1.3303275108337402,
+                  -1.3230315446853638,
+                  -1.3095115423202515,
+                  -1.290273666381836,
+                  12.883079528808594,
+                  0.05556273943541053
                 ]
               ]
             }
@@ -572,47 +723,63 @@
     "extraSentences": [
       [
         "en",
-        "Framer info section 0"
+        "what is framer"
       ],
       [
         "en",
-        "React info section 0"
+        "tell me about framer"
       ],
       [
         "en",
-        "React info section 1"
+        "what is react"
       ],
       [
         "en",
-        "React info section 2"
+        "tell me about react"
       ],
       [
         "en",
-        "React info section 3"
+        "framer section 0"
       ],
       [
         "en",
-        "React info section 4"
+        "react section 0"
       ],
       [
         "en",
-        "React info section 5"
+        "react section 1"
       ],
       [
         "en",
-        "React info section 6"
+        "react section 2"
       ],
       [
         "en",
-        "React info section 7"
+        "react section 3"
       ],
       [
         "en",
-        "React info section 8"
+        "react section 4"
       ],
       [
         "en",
-        "React info section 9"
+        "react section 5"
+      ],
+      [
+        "en",
+        "react section 6"
+      ],
+      [
+        "en",
+        "react section 7"
+      ],
+      [
+        "en",
+        "react section 8"
+      ],
+      [
+        "en",
+        "react section 9"
       ]
     ]
   },
@@ -630,14 +797,24 @@
     },
     "responses": {
       "en": {
+        "framer.info": [
+          {
+            "answer": "Framer is a design and prototyping tool."
+          }
+        ],
+        "react.info": [
+          {
+            "answer": "React is a JavaScript library for building user interfaces."
+          }
+        ],
         "framer.section0": [
           {
-            "answer": "﻿Comprehensive Guide to Framer Code Overrides and Code Components\r\n\r\n\r\nYou are an expert Framer developer specializing in creating Code Components and Code Overrides using React and TypeScript. This comprehensive guide serves as your complete knowledge base.\r\n1. Understanding Framer's Architecture\r\nWhat is Framer?\r\nFramer is a powerful visual web builder that allows users to draw elements on a canvas, which are then compiled into React components. It bridges the gap between design and development by:\r\n* Converting visual elements into production-ready React components\r\n* Providing a real-time preview environment\r\n* Enabling code-based customization through components and overrides\r\n* Supporting responsive layouts and interactions\r\n* Offering a comprehensive property control system\r\nCore Concepts\r\nCode Components\r\nCode Components are custom React components that:\r\n* Are written in TypeScript (.tsx files)\r\n* Can be added directly to the canvas\r\n* Support visual configuration through Property Controls\r\n* Have access to Framer Motion for animations\r\n* Can utilize third-party libraries\r\n* Support auto-sizing and responsive layouts\r\n* Are shareable through unique URLs\r\nKey Use Cases:\r\n* Custom interactive elements\r\n* Complex data visualizations\r\n* Integration with external APIs\r\n* Custom layout systems\r\n* Reusable component libraries\r\nCode Overrides\r\nCode Overrides are React Higher-Order Components that:\r\n* Modify existing canvas elements\r\n* Are only active in preview and published sites\r\n* Apply through the Properties panel\r\n* Must maintain original element functionality\r\n* Cannot create new elements\r\n* Keep in mind they cannot have component properties\r\nKey Use Cases:\r\n* Adding interactivity to static elements\r\n* Implementing analytics tracking\r\n* Modifying styles dynamically\r\n* Adding conditional rendering\r\n* Implementing shared state\r\n2. Code Components Deep Dive\r\nBasic Structure\r\nThe most basic Code Component structure looks like this:\r\n/**\r\n * @framerDisableUnlink\r\n * @framerIntrinsicWidth 200\r\n * @framerIntrinsicHeight 200\r\n */\r\nexport default function MyComponent(props) {\r\n    const { text, style } = props\r\n    return <motion.div style={{...style}}>{text}</motion.div>\r\n}\r\nMyComponent.defaultProps = {\r\n    text: \"Hello World\"\r\n}\r\naddPropertyControls(MyComponent, {\r\n    text: { type: ControlType.String }\r\n})\r\nKey Points:\r\n* The component must be the default export\r\n* Annotations control sizing and behavior\r\n* Props must be properly destructured\r\n* Style props must be spread correctly\r\n* Property Controls define the UI configuration\r\n* Default props provide fallback values\r\nProperty Controls System\r\nBasic Controls\r\nProperty Controls allow users to modify component props through Framer's UI. Here's a comprehensive example:\r\nimport { addPropertyControls, ControlType } from \"framer\"\r\nexport default function AdvancedComponent(props) {\r\n    const { \r\n        text,\r\n        color,\r\n        number,\r\n        toggle,\r\n        selection,\r\n        file\r\n    } = props\r\n    return (\r\n        <motion.div\r\n            style={{\r\n                background: color,\r\n                opacity: number,\r\n                display: toggle ? \"block\" : \"none\"\r\n            }}\r\n        >\r\n            {text}\r\n            {selection === \"showFile\" && <img src={file} />}\r\n        </motion.div>\r\n    )\r\n}\r\naddPropertyControls(AdvancedComponent, {\r\n    // Text input with placeholder\r\n    text: { \r\n        type: ControlType.String,\r\n        title: \"Label Text\",\r\n        placeholder: \"Enter text...\",\r\n        defaultValue: \"Hello World\"\r\n    },\r\n    // Color picker with optional alpha\r\n    color: { \r\n        type: ControlType.Color,\r\n        title: \"Background\",\r\n        defaultValue: \"#09F\"\r\n    },\r\n    // Number input with range\r\n    number: { \r\n        type: ControlType.Number,\r\n        title: \"Opacity\",\r\n        min: 0,\r\n        max: 1,\r\n        step: 0.1,\r\n        defaultValue: 1,\r\n        unit: \"%\",\r\n        displayStepper: true\r\n    },\r\n    // Boolean toggle with custom labels\r\n    toggle: { \r\n        type: ControlType.Boolean,\r\n        title: \"Visibility\",\r\n        enabledTitle: \"Shown\",\r\n        disabledTitle: \"Hidden\",\r\n        defaultValue: true\r\n    },\r\n    // Enum for selection\r\n    selection: {\r\n        type: ControlType.Enum,\r\n        title: \"Mode\",\r\n        options: [\"hideFile\", \"showFile\"],\r\n        optionTitles: [\"Hide File\", \"Show File\"],\r\n        defaultValue: \"hideFile\",\r\n        displaySegmentedControl: true\r\n    },\r\n    // File picker with type restriction\r\n    file: {\r\n        type: ControlType.File,\r\n        title: \"Upload\",\r\n        allowedFileTypes: [\"image/*\"],\r\n    }\r\n})\r\nImportant Considerations:\r\n* Each control type has specific options and behaviors\r\n* Titles should be clear and descriptive\r\n* Default values prevent undefined states\r\n* Controls can be conditional using the hidden property\r\n* Options can be customized with titles and icons\r\n* Units can be specified for numeric values\r\n* Steppers and segments provide better UX\r\n\r\n\r\nAdvanced Property Controls\r\nResponsiveImage Control\r\nThe ResponsiveImage control provides optimized image handling with responsive variants and positioning:\r\nimport { addPropertyControls, ControlType } from \"framer\"\r\n/**\r\n * @framerDisableUnlink\r\n * @framerSupportedLayoutWidth fixed\r\n * @framerSupportedLayoutHeight fixed\r\n */\r\nexport default function ResponsiveImageComponent({ image, style }) {\r\n    // Image prop contains: src, srcSet, alt, positionX, positionY\r\n    return (\r\n        <img\r\n            src={image.src}\r\n            srcSet={image.srcSet}\r\n            alt={image.alt}\r\n            style={{\r\n                ...style,\r\n                width: \"100%\",\r\n                height: \"100%\",\r\n                objectFit: \"cover\",\r\n                objectPosition: `${image.positionX} ${image.positionY}`\r\n            }}\r\n        />\r\n    )\r\n}\r\naddPropertyControls(ResponsiveImageComponent, {\r\n    image: {\r\n        type: ControlType.ResponsiveImage,\r\n        title: \"Image\"\r\n    }\r\n})\r\nKey Features:\r\n* Automatically generates srcSet for different viewport sizes\r\n* Provides image positioning controls\r\n* Handles alt text for accessibility\r\n* Maintains aspect ratio\r\n* Optimizes image loading\r\nExtended Font Control\r\nThe Font control provides comprehensive typography management:\r\nimport { addPropertyControls, ControlType } from \"framer\"\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function TypographyComponent(props) {\r\n    const { text, font, style } = props\r\n    \r\n    return (\r\n        <div style={{\r\n            ...style,\r\n            ...font, // Spreads all font properties automatically\r\n        }}>\r\n            {text}\r\n        </div>\r\n    )\r\n}\r\nTypographyComponent.defaultProps = {\r\n    text: \"Sample Text\",\r\n    font: {\r\n        family: \"Inter\",\r\n        size: 16,\r\n        weight: \"Regular\",\r\n        lineHeight: \"1.5em\",\r\n        letterSpacing: \"0em\",\r\n        textAlign: \"left\"\r\n    }\r\n}\r\naddPropertyControls(TypographyComponent, {\r\n    text: {\r\n        type: ControlType.String,\r\n        title: \"Text\"\r\n    },\r\n    font: {\r\n        type: ControlType.Font,\r\n        controls: \"extended\",\r\n        defaultValue: TypographyComponent.defaultProps.font,\r\n        tittle: \"Typography\"\r\n    }\r\n})\r\nImportant Notes:\r\n* Always spread the entire font object, not individual properties\r\n* Extended controls provide full typography options\r\n* Supports system and custom fonts\r\n* Handles font weights and styles\r\n* Includes text alignment and spacing\r\nCustom Object Controls\r\nObject controls allow grouping related properties:\r\nimport { addPropertyControls, ControlType } from \"framer\"\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function StyleableComponent(props) {\r\n    const { content, style, appearance } = props\r\n    \r\n    return (\r\n        <motion.div\r\n            style={{\r\n                ...style,\r\n                backgroundColor: appearance.background,\r\n                borderRadius: appearance.radius,\r\n                boxShadow: appearance.shadow,\r\n                padding: appearance.spacing\r\n            }}\r\n        >\r\n            {content}\r\n        </motion.div>\r\n    )\r\n}\r\nStyleableComponent.defaultProps = {\r\n    content: \"Styleable Component\",\r\n    appearance: {\r\n        background: \"#FFFFFF\",\r\n        radius: 8,\r\n        shadow: \"0px 2px 4px rgba(0,0,0,0.1)\",\r\n        spacing: 16\r\n    }\r\n}\r\naddPropertyControls(StyleableComponent, {\r\n    content: {\r\n        type: ControlType.String,\r\n        title: \"Content\"\r\n    },\r\n    appearance: {\r\n        type: ControlType.Object,\r\n        title: \"Appearance\",\r\n        controls: {\r\n            background: {\r\n                type: ControlType.Color,\r\n                title: \"Background\"\r\n            },\r\n            radius: {\r\n                type: ControlType.Number,\r\n                title: \"Corner Radius\",\r\n                min: 0,\r\n                max: 100,\r\n                unit: \"px\"\r\n            },\r\n            shadow: {\r\n                type: ControlType.String,\r\n                title: \"Box Shadow\"\r\n            },\r\n            spacing: {\r\n                type: ControlType.Number,\r\n                title: \"Padding\",\r\n                min: 0,\r\n                max: 100,\r\n                unit: \"px\"\r\n            }\r\n        },\r\n        optional: true, // Makes the entire object optional\r\n        buttonTitle: \"Style Settings\", // Custom button text\r\n        icon: \"effect\" // Custom icon: effect, color, boolean\r\n    }\r\n})\r\nBenefits of Object Controls:\r\n* Organizes related properties\r\n* Reduces UI clutter\r\n* Can be made optional\r\n* Supports nested controls\r\n* Provides visual grouping\r\n* Can have custom icons and titles\r\nArray Controls with Complex Items\r\nArray controls handle lists of items:\r\nimport { addPropertyControls, ControlType } from \"framer\"\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function ListComponent(props) {\r\n    const { items, style } = props\r\n    \r\n    return (\r\n        <div style={style}>\r\n            {items.map((item, index) => (\r\n                <div key={index} style={{\r\n                    backgroundColor: item.color,\r\n                    padding: item.padding\r\n                }}>\r\n                    <img src={item.image?.src} alt={item.title} />\r\n                    <h3>{item.title}</h3>\r\n                    <p>{item.description}</p>\r\n                </div>\r\n            ))}\r\n        </div>\r\n    )\r\n}\r\nListComponent.defaultProps = {\r\n    items: [\r\n        {\r\n            title: \"First Item\",\r\n            description: \"Description here\",\r\n            color: \"#F0F0F0\",\r\n            padding: 16\r\n        }\r\n    ]\r\n}\r\naddPropertyControls(ListComponent, {\r\n    items: {\r\n        type: ControlType.Array,\r\n        title: \"List Items\",\r\n        control: {\r\n            type: ControlType.Object,\r\n            controls: {\r\n                title: {\r\n                    type: ControlType.String,\r\n                    title: \"Title\"\r\n                },\r\n                description: {\r\n                    type: ControlType.String,\r\n                    title: \"Description\",\r\n                    displayTextArea: true\r\n                },\r\n                image: {\r\n                    type: ControlType.ResponsiveImage,\r\n                    title: \"Image\"\r\n                },\r\n                color: {\r\n                    type: ControlType.Color,\r\n                    title: \"Background\"\r\n                },\r\n                padding: {\r\n                    type: ControlType.Number,\r\n                    title: \"Padding\",\r\n                    min: 0,\r\n                    max: 100,\r\n                    unit: \"px\"\r\n                }\r\n            }\r\n        },\r\n        defaultValue: ListComponent.defaultProps.items,\r\n        maxCount: 10\r\n    }\r\n})\r\nArray Control Features:\r\n* Supports complex nested objects\r\n* Allows reordering of items\r\n* Can limit maximum items\r\n* Provides item addition/removal\r\n* Maintains type safety\r\n* Supports all control types within items\r\n\r\n\r\nAuto-Sizing System\r\nUnderstanding Layout Modes\r\nFramer components can adapt their size based on content or container. This is controlled through annotations and proper style handling:\r\n/**\r\n * @framerSupportedLayoutWidth auto\r\n * @framerSupportedLayoutHeight fixed\r\n * @framerIntrinsicWidth 200\r\n * @framerIntrinsicHeight 100\r\n */\r\nexport default function AdaptiveComponent(props) {\r\n    const { content, style } = props\r\n    \r\n    // Container that adapts width to content but maintains fixed height\r\n    return (\r\n        <motion.div\r\n            style={{\r\n                ...style, // Critical for layout system to work\r\n                display: \"flex\",\r\n                padding: \"20px\",\r\n                backgroundColor: \"#f0f0f0\"\r\n            }}\r\n        >\r\n            {content}\r\n        </motion.div>\r\n    )\r\n}\r\nLayout Options Explained:\r\n* auto: Size based on content\r\n* fixed: Size based on container\r\n* any: User can switch between auto/fixed\r\n* any-prefer-fixed: Defaults to fixed but can switch\r\nDynamic Measurement System\r\nFor components that need to react to their own size:\r\nimport { useEffect, useLayoutEffect, useRef, useState } from \"react\"\r\nimport { useMeasuredSize } from \"framer\"\r\n/**\r\n * @framerSupportedLayoutWidth any\r\n * @framerSupportedLayoutHeight any\r\n */\r\nexport default function ResponsiveGrid(props) {\r\n    const { items, minItemWidth = 200, gap = 20, style } = props\r\n    const containerRef = useRef(null)\r\n    const { measured } = useMeasuredSize(containerRef)\r\n    const [columns, setColumns] = useState(1)\r\n    \r\n    useLayoutEffect(() => {\r\n        if (measured?.width) {\r\n            // Calculate optimal columns based on container width\r\n            const optimalColumns = Math.floor(measured.width / (minItemWidth + gap))\r\n            setColumns(Math.max(1, optimalColumns))\r\n        }\r\n    }, [measured?.width, minItemWidth, gap])\r\n    \r\n    return (\r\n        <div\r\n            ref={containerRef}\r\n            style={{\r\n                ...style,\r\n                display: \"grid\",\r\n                gridTemplateColumns: `repeat(${columns}, 1fr)`,\r\n                gap: `${gap}px`,\r\n                width: \"100%\"\r\n            }}\r\n        >\r\n            {items.map((item, index) => (\r\n                <div key={index}>{item}</div>\r\n            ))}\r\n        </div>\r\n    )\r\n}\r\naddPropertyControls(ResponsiveGrid, {\r\n    items: {\r\n        type: ControlType.Array,\r\n        control: { type: ControlType.ComponentInstance },\r\n        maxCount: 12\r\n    },\r\n    minItemWidth: {\r\n        type: ControlType.Number,\r\n        min: 100,\r\n        max: 500,\r\n        unit: \"px\"\r\n    },\r\n    gap: {\r\n        type: ControlType.Number,\r\n        min: 0,\r\n        max: 100,\r\n        unit: \"px\"\r\n    }\r\n})\r\nKey Measurement Concepts:\r\n* useMeasuredSize provides real-time dimensions\r\n* useLayoutEffect prevents visual flicker\r\n* Always maintain aspect ratios when needed\r\n* Consider performance implications\r\n* Handle initial/loading states\r\nCode Overrides Deep Dive\r\nState Management Override\r\nDemonstrates sharing state between multiple elements:\r\nimport type { ComponentType } from \"react\"\r\nimport { createStore } from \"https://framer.com/m/framer/store.js@^1.0.0\"\r\n// Create a shared store\r\nconst useStore = createStore({\r\n    isActive: false,\r\n    count: 0,\r\n    theme: \"light\"\r\n})\r\n// Override to display state\r\nexport function withStateDisplay(Component): ComponentType {\r\n    return (props) => {\r\n        const [store] = useStore()\r\n        \r\n        return (\r\n            <Component\r\n                {...props}\r\n                text={`Count: ${store.count}`}\r\n                style={{\r\n                    ...props.style,\r\n                    opacity: store.isActive ? 1 : 0.5\r\n                }}\r\n            />\r\n        )\r\n    }\r\n}\r\n// Override to modify state\r\nexport function withStateControl(Component): ComponentType {\r\n    return (props) => {\r\n        const [store, setStore] = useStore()\r\n        \r\n        const handleTap = () => {\r\n            setStore({\r\n                count: store.count + 1,\r\n                isActive: !store.isActive\r\n            })\r\n            // Preserve original tap handler if exists\r\n            if (props.onTap) props.onTap()\r\n        }\r\n        \r\n        return <Component {...props} onTap={handleTap} />\r\n    }\r\n}\r\nImportant Override Patterns:\r\n* Always preserve original props and handlers\r\n* Use TypeScript for type safety\r\n* Handle undefined callbacks\r\n* Consider performance with state updates\r\n* Maintain component functionality\r\nAdvanced Event Handling Override\r\nDemonstrates complex event handling with analytics:\r\nimport type { ComponentType } from \"react\"\r\ninterface AnalyticsEvent {\r\n    element: string\r\n    action: string\r\n    timestamp: number\r\n    metadata?: Record<string, any>\r\n}\r\nconst analyticsQueue: AnalyticsEvent[] = []\r\nexport function withAnalytics(elementName: string) {\r\n    return (Component): ComponentType => {\r\n        return (props) => {\r\n            const trackEvent = (action: string, metadata?: Record<string, any>) => {\r\n                analyticsQueue.push({\r\n                    element: elementName,\r\n                    action,\r\n                    timestamp: Date.now(),\r\n                    metadata\r\n                })\r\n                \r\n                // Batch send events every 5 seconds\r\n                if (analyticsQueue.length >= 10) {\r\n                    sendAnalytics(analyticsQueue.splice(0))\r\n                }\r\n            }\r\n            \r\n            const handleTap = (event) => {\r\n                trackEvent(\"tap\", {\r\n                    x: event.clientX,\r\n                    y: event.clientY\r\n                })\r\n                if (props.onTap) props.onTap(event)\r\n            }\r\n            \r\n            const handleHoverStart = () => {\r\n                trackEvent(\"hover_start\")\r\n                if (props.onHoverStart) props.onHoverStart()\r\n            }\r\n            \r\n            return (\r\n                <Component\r\n                    {...props}\r\n                    onTap={handleTap}\r\n                    onHoverStart={handleHoverStart}\r\n                />\r\n            )\r\n        }\r\n    }\r\n}\r\n// Usage example:\r\n// export const withButtonAnalytics = withAnalytics(\"primary_button\")\r\nEvent Override Best Practices:\r\n* Type event handlers properly\r\n* Batch analytics when possible\r\n* Preserve original event flow\r\n* Handle all relevant events\r\n* Add proper error boundaries\r\n* Consider async operations\r\n\r\n\r\nAdvanced Features\r\nLocalization System\r\nComprehensive localization implementation with fallbacks and dynamic content:\r\nimport { useLocaleInfo, useLocaleCode } from \"framer\"\r\nimport type { ComponentType } from \"react\"\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function LocalizedComponent(props) {\r\n    const { activeLocale, locales, setLocale } = useLocaleInfo()\r\n    const localeCode = useLocaleCode() // Shorthand for activeLocale.code\r\n    \r\n    // Content mapping for different locales\r\n    const content = {\r\n        en: {\r\n            title: \"Welcome\",\r\n            description: \"Select your language\"\r\n        },\r\n        es: {\r\n            title: \"Bienvenido\",\r\n            description: \"Selecciona tu idioma\"\r\n        },\r\n        // Add more languages\r\n    }\r\n    \r\n    // Fallback handling\r\n    const currentContent = content[localeCode] || content.en\r\n    \r\n    return (\r\n        <div style={props.style}>\r\n            <h1>{currentContent.title}</h1>\r\n            <p>{currentContent.description}</p>\r\n            \r\n            {/* Language Switcher */}\r\n            <div style={{ display: \"flex\", gap: \"10px\" }}>\r\n                {locales.map((locale) => (\r\n                    <button\r\n                        key={locale.id}\r\n                        onClick={() => setLocale(locale)}\r\n                        style={{\r\n                            fontWeight: \r\n                                locale.id === activeLocale.id \r\n                                    ? \"bold\" \r\n                                    : \"normal\"\r\n                        }}\r\n                    >\r\n                        {locale.name}\r\n                    </button>\r\n                ))}\r\n            </div>\r\n        </div>\r\n    )\r\n}\r\n// Override for adding localization to existing elements\r\nexport function withLocalization(Component): ComponentType {\r\n    return (props) => {\r\n        const { localeCode } = useLocaleCode()\r\n        \r\n        // Example of dynamic prop localization\r\n        const localizedProps = {\r\n            ...props,\r\n            text: props[`text_${localeCode}`] || props.text\r\n        }\r\n        \r\n        return <Component {...localizedProps} />\r\n    }\r\n}\r\nLocalization Features:\r\n* Supports multiple languages\r\n* Handles fallback content\r\n* Provides language switching\r\n* Maintains type safety\r\n* Supports RTL languages\r\n* Can be used in overrides\r\nAdvanced Routing System\r\nComplex routing implementation with parameters and transitions:\r\nimport {\r\n    useRouter,\r\n    useCurrentRouteId,\r\n    useRouteAnchor\r\n} from \"framer\"\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function NavigationSystem(props) {\r\n    const { navigate, routes, currentRoute } = useRouter()\r\n    const activeRouteId = useCurrentRouteId()\r\n    \r\n    // Helper for route transitions\r\n    const createTransition = (routeId) => ({\r\n        initial: { opacity: 0, x: 50 },\r\n        animate: { opacity: 1, x: 0 },\r\n        exit: { opacity: 0, x: -50 },\r\n        transition: { duration: 0.3 }\r\n    })\r\n    \r\n    return (\r\n        <motion.nav style={props.style}>\r\n            {routes.map((route) => {\r\n                // Get anchor properties for each route\r\n                const { href, onClick } = useRouteAnchor(route.id)\r\n                \r\n                return (\r\n                    <motion.a\r\n                        key={route.id}\r\n                        href={href}\r\n                        onClick={(e) => {\r\n                            e.preventDefault()\r\n                            // Custom transition when navigating\r\n                            navigate(route.id, {\r\n                                transition: createTransition(route.id)\r\n                            })\r\n                            onClick(e)\r\n                        }}\r\n                        animate={{\r\n                            scale: route.id === activeRouteId ? 1.1 : 1,\r\n                            fontWeight: route.id === activeRouteId ? 700 : 400\r\n                        }}\r\n                    >\r\n                        {route.name}\r\n                    </motion.a>\r\n                )\r\n            })}\r\n        </motion.nav>\r\n    )\r\n}\r\n// Override for adding route-based behavior\r\nexport function withRouteAware(Component): ComponentType {\r\n    return (props) => {\r\n        const currentRoute = useCurrentRouteId()\r\n        \r\n        // Example: Show component only on specific routes\r\n        if (props.hideOnRoutes?.includes(currentRoute)) {\r\n            return null\r\n        }\r\n        \r\n        // Example: Apply different styles per route\r\n        const routeStyles = {\r\n            home: { background: \"white\" },\r\n            about: { background: \"light-gray\" },\r\n            contact: { background: \"blue\" }\r\n        }\r\n        \r\n        return (\r\n            <Component\r\n                {...props}\r\n                style={{\r\n                    ...props.style,\r\n                    ...routeStyles[currentRoute]\r\n                }}\r\n            />\r\n        )\r\n    }\r\n}\r\nRouting System Features:\r\n* Supports path parameters\r\n* Handles transitions\r\n* Maintains browser history\r\n* Provides active route info\r\n* Supports nested routes\r\n* Can be used in overrides\r\nCanvas Detection and Environment Handling\r\nSophisticated environment-aware component:\r\nimport { useIsOnFramerCanvas, RenderTarget } from \"framer\"\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function EnvironmentAwareComponent(props) {\r\n    const isCanvas = useIsOnFramerCanvas()\r\n    const currentTarget = RenderTarget.current()\r\n    \r\n    // Helper for environment-specific content\r\n    const getContent = () => {\r\n        switch (currentTarget) {\r\n            case RenderTarget.canvas:\r\n                return <CanvasPreview {...props} />\r\n                \r\n            case RenderTarget.preview:\r\n                return <PreviewVersion {...props} />\r\n                \r\n            case RenderTarget.export:\r\n                return <ExportVersion {...props} />\r\n                \r\n            case RenderTarget.thumbnail:\r\n                return <ThumbnailVersion {...props} />\r\n                \r\n            default:\r\n                return <DefaultVersion {...props} />\r\n        }\r\n    }\r\n    \r\n    // Helper for environment-specific styles\r\n    const getStyles = () => {\r\n        const baseStyles = {\r\n            ...props.style,\r\n            padding: \"20px\"\r\n        }\r\n        \r\n        if (isCanvas) {\r\n            return {\r\n                ...baseStyles,\r\n                border: \"2px dashed #09F\",\r\n                background: \"rgba(0,153,255,0.1)\"\r\n            }\r\n        }\r\n        \r\n        return baseStyles\r\n    }\r\n    \r\n    return (\r\n        <div style={getStyles()}>\r\n            {getContent()}\r\n            \r\n            {isCanvas && (\r\n                <div style={{ fontSize: \"12px\", opacity: 0.5 }}>\r\n                    Canvas Preview Mode\r\n                </div>\r\n            )}\r\n        </div>\r\n    )\r\n}\r\n// Override for environment-specific behavior\r\nexport function withEnvironmentAware(Component): ComponentType {\r\n    return (props) => {\r\n        const isCanvas = useIsOnFramerCanvas()\r\n        \r\n        // Example: Different data sources per environment\r\n        const getData = () => {\r\n            if (isCanvas) {\r\n                return mockData\r\n            }\r\n            return realData\r\n        }\r\n        \r\n        return (\r\n            <Component\r\n                {...props}\r\n                data={getData()}\r\n                style={{\r\n                    ...props.style,\r\n                    cursor: isCanvas ? \"default\" : \"pointer\"\r\n                }}\r\n            />\r\n        )\r\n    }\r\n}\r\nEnvironment Detection Features:\r\n* Distinguishes between environments\r\n* Provides mock data for canvas\r\n* Handles preview states\r\n* Supports development indicators\r\n* Maintains type safety\r\n* Can be used in overrides\r\n\r\n\r\nBest Practices and Performance Optimization\r\nComponent Architecture\r\nExample of a well-structured, performant component:\r\nimport { memo, useCallback, useMemo, useRef, useEffect } from \"react\"\r\nimport { motion, useAnimation } from \"framer-motion\"\r\nimport { addPropertyControls, ControlType, RenderTarget } from \"framer\"\r\n/**\r\n * @framerDisableUnlink\r\n * @framerSupportedLayoutWidth any\r\n * @framerSupportedLayoutHeight auto\r\n */\r\nexport default memo(function OptimizedComponent(props) {\r\n    const {\r\n        items,\r\n        animation,\r\n        theme,\r\n        onItemSelect,\r\n        style\r\n    } = props\r\n    \r\n    // Refs for persistent values\r\n    const animationControls = useAnimation()\r\n    const intervalRef = useRef(null)\r\n    \r\n    // Memoized calculations\r\n    const processedItems = useMemo(() => {\r\n        return items.map(item => ({\r\n            ...item,\r\n            processed: complexCalculation(item)\r\n        }))\r\n    }, [items]) // Only recalculate when items change\r\n    \r\n    // Memoized event handlers\r\n    const handleItemClick = useCallback((item) => {\r\n        if (onItemSelect) {\r\n            onItemSelect(item)\r\n        }\r\n        \r\n        animationControls.start({\r\n            scale: [1, 1.1, 1],\r\n            transition: { duration: 0.3 }\r\n        })\r\n    }, [onItemSelect])\r\n    \r\n    // Cleanup on unmount\r\n    useEffect(() => {\r\n        return () => {\r\n            if (intervalRef.current) {\r\n                clearInterval(intervalRef.current)\r\n            }\r\n        }\r\n    }, [])\r\n    \r\n    // Environment-specific rendering\r\n    if (RenderTarget.current() === RenderTarget.canvas) {\r\n        return <CanvasPlaceholder {...props} />\r\n    }\r\n    \r\n    return (\r\n        <motion.div\r\n            style={{\r\n                ...style,\r\n                ...theme.container\r\n            }}\r\n            animate={animationControls}\r\n        >\r\n            {processedItems.map((item, index) => (\r\n                <motion.div\r\n                    key={item.id}\r\n                    layoutId={item.id}\r\n                    onClick={() => handleItemClick(item)}\r\n                    whileHover={{ scale: 1.05 }}\r\n                    style={theme.item}\r\n                >\r\n                    {item.content}\r\n                </motion.div>\r\n            ))}\r\n        </motion.div>\r\n    )\r\n})\r\n// Property Controls with TypeScript types\r\ninterface ThemeType {\r\n    container: React.CSSProperties\r\n    item: React.CSSProperties\r\n}\r\ninterface ItemType {\r\n    id: string\r\n    content: React.ReactNode\r\n}\r\ninterface Props {\r\n    items: ItemType[]\r\n    theme: ThemeType\r\n    animation: string\r\n    onItemSelect?: (item: ItemType) => void\r\n    style?: React.CSSProperties\r\n}\r\naddPropertyControls(OptimizedComponent, {\r\n    items: {\r\n        type: ControlType.Array,\r\n        control: {\r\n            type: ControlType.Object,\r\n            controls: {\r\n                id: { type: ControlType.String },\r\n                content: { type: ControlType.ComponentInstance }\r\n            }\r\n        },\r\n        defaultValue: []\r\n    },\r\n    theme: {\r\n        type: ControlType.Object,\r\n        controls: {\r\n            container: {\r\n                type: ControlType.Object,\r\n                controls: {\r\n                    background: { type: ControlType.Color },\r\n                    padding: { type: ControlType.Number }\r\n                }\r\n            },\r\n            item: {\r\n                type: ControlType.Object,\r\n                controls: {\r\n                    background: { type: ControlType.Color },\r\n                    borderRadius: { type: ControlType.Number }\r\n                }\r\n            }\r\n        }\r\n    },\r\n    animation: {\r\n        type: ControlType.Enum,\r\n        options: [\"fade\", \"slide\", \"scale\"],\r\n        defaultValue: \"fade\"\r\n    }\r\n})\r\nPerformance Best Practices:\r\n* Use memo for complex components\r\n* Memoize expensive calculations\r\n* Optimize event handlers\r\n* Clean up side effects\r\n* Use proper TypeScript types\r\n* Implement proper error boundaries\r\nError Handling and Boundaries\r\nimport { Component, ErrorInfo } from \"react\"\r\nclass FramerErrorBoundary extends Component {\r\n    state = { hasError: false, error: null }\r\n    \r\n    static getDerivedStateFromError(error) {\r\n        return { hasError: true, error }\r\n    }\r\n    \r\n    componentDidCatch(error: Error, errorInfo: ErrorInfo) {\r\n        // Log to error reporting service\r\n        console.error(\"Framer Component Error:\", error, errorInfo)\r\n    }\r\n    \r\n    render() {\r\n        if (this.state.hasError) {\r\n            // Render fallback UI\r\n            return (\r\n                <div style={{\r\n                    padding: \"20px\",\r\n                    background: \"#FEE\",\r\n                    border: \"1px solid #F00\"\r\n                }}>\r\n                    <h3>Component Error</h3>\r\n                    <p>{this.state.error?.message}</p>\r\n                    {RenderTarget.current() === RenderTarget.canvas && (\r\n                        <pre>{this.state.error?.stack}</pre>\r\n                    )}\r\n                </div>\r\n            )\r\n        }\r\n        \r\n        return this.props.children\r\n    }\r\n}\r\n// Usage wrapper for components\r\nexport function withErrorBoundary(Component): ComponentType {\r\n    return (props) => (\r\n        <FramerErrorBoundary>\r\n            <Component {...props} />\r\n        </FramerErrorBoundary>\r\n    )\r\n}\r\nPerformance Monitoring\r\nimport { useEffect, useRef } from \"react\"\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function PerformanceAwareComponent(props) {\r\n    const renderCount = useRef(0)\r\n    const lastRenderTime = useRef(performance.now())\r\n    \r\n    useEffect(() => {\r\n        renderCount.current++\r\n        const renderTime = performance.now() - lastRenderTime.current\r\n        \r\n        // Log performance metrics in development\r\n        if (process.env.NODE_ENV === \"development\") {\r\n            console.log(`\r\n                Component Performance Metrics:\r\n                - Render Count: ${renderCount.current}\r\n                - Render Time: ${renderTime.toFixed(2)}ms\r\n            `)\r\n        }\r\n        \r\n        lastRenderTime.current = performance.now()\r\n    })\r\n    \r\n    return <Component {...props} />\r\n}\r\nResponsive Design Patterns\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function ResponsiveComponent(props) {\r\n    const containerRef = useRef(null)\r\n    const { measured } = useMeasuredSize(containerRef)\r\n    \r\n    // Responsive breakpoints\r\n    const getResponsiveStyles = (width) => {\r\n        if (width < 480) {\r\n            return styles.mobile\r\n        } else if (width < 768) {\r\n            return styles.tablet\r\n        }\r\n        return styles.desktop\r\n    }\r\n    \r\n    // Dynamic grid calculation\r\n    const getGridColumns = (width) => {\r\n        const minColumnWidth = 200\r\n        const gap = 20\r\n        const columns = Math.floor((width + gap) / (minColumnWidth + gap))\r\n        return Math.max(1, columns)\r\n    }\r\n    \r\n    return (\r\n        <div\r\n            ref={containerRef}\r\n            style={{\r\n                ...props.style,\r\n                ...getResponsiveStyles(measured?.width),\r\n                display: \"grid\",\r\n                gridTemplateColumns: \r\n                    `repeat(${getGridColumns(measured?.width)}, 1fr)`,\r\n                gap: \"20px\"\r\n            }}\r\n        >\r\n            {props.children}\r\n        </div>\r\n    )\r\n}\r\n\r\n\r\n\r\n\r\nAdvanced Integration Patterns\r\nData Fetching and State Management\r\nimport { useEffect, useState } from \"react\"\r\nimport { motion } from \"framer-motion\"\r\nimport { addPropertyControls, ControlType, RenderTarget } from \"framer\"\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function DataFetchingComponent(props) {\r\n    const {\r\n        endpoint,\r\n        refreshInterval,\r\n        loadingState,\r\n        errorState,\r\n        style\r\n    } = props\r\n    \r\n    const [data, setData] = useState(null)\r\n    const [loading, setLoading] = useState(true)\r\n    const [error, setError] = useState(null)\r\n    \r\n    // Fetch data with proper error handling and cleanup\r\n    useEffect(() => {\r\n        let mounted = true\r\n        let intervalId = null\r\n        \r\n        const fetchData = async () => {\r\n            try {\r\n                setLoading(true)\r\n                const response = await fetch(endpoint)\r\n                \r\n                if (!response.ok) {\r\n                    throw new Error(`HTTP error! status: ${response.status}`)\r\n                }\r\n                \r\n                const result = await response.json()\r\n                \r\n                if (mounted) {\r\n                    setData(result)\r\n                    setError(null)\r\n                }\r\n            } catch (e) {\r\n                if (mounted) {\r\n                    setError(e.message)\r\n                }\r\n            } finally {\r\n                if (mounted) {\r\n                    setLoading(false)\r\n                }\r\n            }\r\n        }\r\n        \r\n        // Initial fetch\r\n        fetchData()\r\n        \r\n        // Set up polling if interval provided\r\n        if (refreshInterval > 0) {\r\n            intervalId = setInterval(fetchData, refreshInterval * 1000)\r\n        }\r\n        \r\n        // Cleanup\r\n        return () => {\r\n            mounted = false\r\n            if (intervalId) clearInterval(intervalId)\r\n        }\r\n    }, [endpoint, refreshInterval])\r\n    \r\n    // Canvas preview with mock data\r\n    if (RenderTarget.current() === RenderTarget.canvas) {\r\n        return (\r\n            <div style={style}>\r\n                {props.previewData || \"Preview Data\"}\r\n            </div>\r\n        )\r\n    }\r\n    \r\n    if (loading) {\r\n        return <LoadingState {...loadingState} style={style} />\r\n    }\r\n    \r\n    if (error) {\r\n        return <ErrorState message={error} {...errorState} style={style} />\r\n    }\r\n    \r\n    return (\r\n        <motion.div\r\n            initial={{ opacity: 0 }}\r\n            animate={{ opacity: 1 }}\r\n            style={style}\r\n        >\r\n            {props.children(data)}\r\n        </motion.div>\r\n    )\r\n}\r\naddPropertyControls(DataFetchingComponent, {\r\n    endpoint: {\r\n        type: ControlType.String,\r\n        title: \"API Endpoint\"\r\n    },\r\n    refreshInterval: {\r\n        type: ControlType.Number,\r\n        title: \"Refresh (seconds)\",\r\n        defaultValue: 0,\r\n        min: 0,\r\n        step: 1\r\n    },\r\n    previewData: {\r\n        type: ControlType.String,\r\n        title: \"Preview Data\"\r\n    },\r\n    loadingState: {\r\n        type: ControlType.ComponentInstance,\r\n        title: \"Loading Component\"\r\n    },\r\n    errorState: {\r\n        type: ControlType.ComponentInstance,\r\n        title: \"Error Component\"\r\n    }\r\n})\r\nAdvanced Animation Patterns\r\nimport { useState, useEffect } from \"react\"\r\nimport { motion, useAnimation, AnimatePresence } from \"framer-motion\"\r\nimport { addPropertyControls, ControlType } from \"framer\"\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function AnimatedComponent(props) {\r\n    const {\r\n        animation,\r\n        customAnimation,\r\n        trigger,\r\n        children,\r\n        style\r\n    } = props\r\n    \r\n    const controls = useAnimation()\r\n    const [isVisible, setIsVisible] = useState(true)\r\n    \r\n    // Predefined animation variants\r\n    const animations = {\r\n        fade: {\r\n            initial: { opacity: 0 },\r\n            animate: { opacity: 1 },\r\n            exit: { opacity: 0 }\r\n        },\r\n        slide: {\r\n            initial: { x: -100, opacity: 0 },\r\n            animate: { x: 0, opacity: 1 },\r\n            exit: { x: 100, opacity: 0 }\r\n        },\r\n        scale: {\r\n            initial: { scale: 0 },\r\n            animate: { scale: 1 },\r\n            exit: { scale: 0 }\r\n        },\r\n        custom: customAnimation\r\n    }\r\n    \r\n    // Handle animation triggers\r\n    useEffect(() => {\r\n        switch (trigger) {\r\n            case \"loop\":\r\n                controls.start({\r\n                    scale: [1, 1.1, 1],\r\n                    transition: { repeat: Infinity }\r\n                })\r\n                break\r\n            case \"hover\":\r\n                controls.start({ scale: 1 })\r\n                break\r\n            case \"click\":\r\n                setIsVisible(true)\r\n                break\r\n            default:\r\n                controls.start(animations[animation].animate)\r\n        }\r\n    }, [trigger, animation])\r\n    \r\n    return (\r\n        <AnimatePresence>\r\n            {isVisible && (\r\n                <motion.div\r\n                    style={style}\r\n                    initial={animations[animation].initial}\r\n                    animate={controls}\r\n                    exit={animations[animation].exit}\r\n                    whileHover={trigger === \"hover\" ? { scale: 1.1 } : {}}\r\n                    onClick={() => {\r\n                        if (trigger === \"click\") {\r\n                            setIsVisible(false)\r\n                        }\r\n                    }}\r\n                >\r\n                    {children}\r\n                </motion.div>\r\n            )}\r\n        </AnimatePresence>\r\n    )\r\n}\r\naddPropertyControls(AnimatedComponent, {\r\n    animation: {\r\n        type: ControlType.Enum,\r\n        title: \"Animation\",\r\n        options: [\"fade\", \"slide\", \"scale\", \"custom\"],\r\n        defaultValue: \"fade\"\r\n    },\r\n    customAnimation: {\r\n        type: ControlType.Object,\r\n        title: \"Custom Animation\",\r\n        controls: {\r\n            initial: { type: ControlType.Object },\r\n            animate: { type: ControlType.Object },\r\n            exit: { type: ControlType.Object }\r\n        },\r\n        hidden: (props) => props.animation !== \"custom\"\r\n    },\r\n    trigger: {\r\n        type: ControlType.Enum,\r\n        title: \"Trigger\",\r\n        options: [\"auto\", \"loop\", \"hover\", \"click\"],\r\n        defaultValue: \"auto\"\r\n    },\r\n    children: {\r\n        type: ControlType.ComponentInstance,\r\n        title: \"Content\"\r\n    }\r\n})\r\nAdvanced Gesture Handling\r\nimport { useState } from \"react\"\r\nimport { motion, useMotionValue, useTransform } from \"framer-motion\"\r\nimport { addPropertyControls, ControlType } from \"framer\"\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function GestureComponent(props) {\r\n    const {\r\n        dragEnabled,\r\n        dragConstraints,\r\n        dragElastic,\r\n        panEnabled,\r\n        tapEnabled,\r\n        style\r\n    } = props\r\n    \r\n    const [tapped, setTapped] = useState(false)\r\n    \r\n    // Motion values for gesture tracking\r\n    const x = useMotionValue(0)\r\n    const y = useMotionValue(0)\r\n    const scale = useTransform(\r\n        [x, y],\r\n        ([latestX, latestY]) => 1 + (Math.abs(latestX) + Math.abs(latestY)) / 200\r\n    )\r\n    \r\n    // Gesture handlers\r\n    const handleDragStart = () => {\r\n        props.onDragStart?.()\r\n    }\r\n    \r\n    const handleDragEnd = () => {\r\n        props.onDragEnd?.()\r\n    }\r\n    \r\n    const handleTap = () => {\r\n        setTapped(true)\r\n        setTimeout(() => setTapped(false), 200)\r\n        props.onTap?.()\r\n    }\r\n    \r\n    return (\r\n        <motion.div\r\n            style={{\r\n                ...style,\r\n                x,\r\n                y,\r\n                scale: tapEnabled ? scale : 1\r\n            }}\r\n            drag={dragEnabled}\r\n            dragConstraints={dragConstraints}\r\n            dragElastic={dragElastic}\r\n            onDragStart={handleDragStart}\r\n            onDragEnd={handleDragEnd}\r\n            whileTap={tapEnabled ? { scale: 0.95 } : {}}\r\n            onTap={tapEnabled ? handleTap : undefined}\r\n            animate={{\r\n                backgroundColor: tapped ? \"#09F\" : style.backgroundColor\r\n            }}\r\n        >\r\n            {props.children}\r\n        </motion.div>\r\n    )\r\n}\r\naddPropertyControls(GestureComponent, {\r\n    dragEnabled: {\r\n        type: ControlType.Boolean,\r\n        title: \"Draggable\",\r\n        defaultValue: false\r\n    },\r\n    dragConstraints: {\r\n        type: ControlType.Object,\r\n        title: \"Constraints\",\r\n        controls: {\r\n            top: { type: ControlType.Number },\r\n            right: { type: ControlType.Number },\r\n            bottom: { type: ControlType.Number },\r\n            left: { type: ControlType.Number }\r\n        },\r\n        hidden: (props) => !props.dragEnabled\r\n    },\r\n    dragElastic: {\r\n        type: ControlType.Number,\r\n        title: \"Elasticity\",\r\n        defaultValue: 0.5,\r\n        min: 0,\r\n        max: 1,\r\n        step: 0.1,\r\n        hidden: (props) => !props.dragEnabled\r\n    },\r\n    tapEnabled: {\r\n        type: ControlType.Boolean,\r\n        title: \"Tap Animation\",\r\n        defaultValue: true\r\n    },\r\n    children: {\r\n        type: ControlType.ComponentInstance,\r\n        title: \"Content\"\r\n    }\r\n})\r\n\r\n\r\nTesting and Documentation Practices\r\nComponent Testing Pattern\r\nimport { render, screen, fireEvent } from \"@testing-library/react\"\r\nimport { motion } from \"framer-motion\"\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function TestableComponent(props) {\r\n    const {\r\n        title,\r\n        description,\r\n        onAction,\r\n        style\r\n    } = props\r\n    \r\n    return (\r\n        <motion.div\r\n            data-testid=\"testable-component\"\r\n            style={style}\r\n            whileHover={{ scale: 1.05 }}\r\n        >\r\n            <h2 data-testid=\"title\">{title}</h2>\r\n            <p data-testid=\"description\">{description}</p>\r\n            <button\r\n                data-testid=\"action-button\"\r\n                onClick={() => onAction?.()}\r\n            >\r\n                Click Me\r\n            </button>\r\n        </motion.div>\r\n    )\r\n}\r\n// Example test suite (for documentation purposes)\r\n/*\r\ndescribe('TestableComponent', () => {\r\n    it('renders with provided props', () => {\r\n        render(\r\n            <TestableComponent\r\n                title=\"Test Title\"\r\n                description=\"Test Description\"\r\n            />\r\n        )\r\n        \r\n        expect(screen.getByTestId('title')).toHaveTextContent('Test Title')\r\n        expect(screen.getByTestId('description'))\r\n            .toHaveTextContent('Test Description')\r\n    })\r\n    \r\n    it('calls onAction when button is clicked', () => {\r\n        const mockAction = jest.fn()\r\n        render(<TestableComponent onAction={mockAction} />)\r\n        \r\n        fireEvent.click(screen.getByTestId('action-button'))\r\n        expect(mockAction).toHaveBeenCalled()\r\n    })\r\n})\r\n*/\r\naddPropertyControls(TestableComponent, {\r\n    title: {\r\n        type: ControlType.String,\r\n        title: \"Title\"\r\n    },\r\n    description: {\r\n        type: ControlType.String,\r\n        title: \"Description\"\r\n    }\r\n})\r\nDocumentation Generator Component\r\n/**\r\n * @framerDisableUnlink\r\n * @framerSupportedLayoutWidth fixed\r\n * @framerSupportedLayoutHeight auto\r\n */\r\nexport default function DocumentationGenerator(props) {\r\n    const { component, style } = props\r\n    \r\n    // Extract component documentation\r\n    const documentation = {\r\n        name: component.name,\r\n        props: Object.entries(component.propTypes || {}).map(([name, type]) => ({\r\n            name,\r\n            type: type.toString(),\r\n            required: type.isRequired,\r\n            defaultValue: component.defaultProps?.[name]\r\n        })),\r\n        propertyControls: Object.entries(component.propertyControls || {})\r\n            .map(([name, control]) => ({\r\n                name,\r\n                type: control.type,\r\n                options: control.options,\r\n                defaultValue: control.defaultValue\r\n            }))\r\n    }\r\n    \r\n    return (\r\n        <div style={{ ...style, padding: \"20px\" }}>\r\n            <h1>{documentation.name}</h1>\r\n            \r\n            <h2>Props</h2>\r\n            <table style={{ width: \"100%\" }}>\r\n                <thead>\r\n                    <tr>\r\n                        <th>Name</th>\r\n                        <th>Type</th>\r\n                        <th>Required</th>\r\n                        <th>Default</th>\r\n                    </tr>\r\n                </thead>\r\n                <tbody>\r\n                    {documentation.props.map(prop => (\r\n                        <tr key={prop.name}>\r\n                            <td>{prop.name}</td>\r\n                            <td>{prop.type}</td>\r\n                            <td>{prop.required ? \"Yes\" : \"No\"}</td>\r\n                            <td>\r\n                                {prop.defaultValue !== undefined \r\n                                    ? JSON.stringify(prop.defaultValue) \r\n                                    : \"-\"}\r\n                            </td>\r\n                        </tr>\r\n                    ))}\r\n                </tbody>\r\n            </table>\r\n            \r\n            <h2>Property Controls</h2>\r\n            <table style={{ width: \"100%\" }}>\r\n                <thead>\r\n                    <tr>\r\n                        <th>Name</th>\r\n                        <th>Type</th>\r\n                        <th>Options</th>\r\n                        <th>Default</th>\r\n                    </tr>\r\n                </thead>\r\n                <tbody>\r\n                    {documentation.propertyControls.map(control => (\r\n                        <tr key={control.name}>\r\n                            <td>{control.name}</td>\r\n                            <td>{control.type}</td>\r\n                            <td>\r\n                                {control.options \r\n                                    ? JSON.stringify(control.options) \r\n                                    : \"-\"}\r\n                            </td>\r\n                            <td>\r\n                                {control.defaultValue !== undefined \r\n                                    ? JSON.stringify(control.defaultValue) \r\n                                    : \"-\"}\r\n                            </td>\r\n                        </tr>\r\n                    ))}\r\n                </tbody>\r\n            </table>\r\n        </div>\r\n    )\r\n}\r\nComponent Usage Example Generator\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function UsageExampleGenerator(props) {\r\n    const { component, style } = props\r\n    \r\n    // Generate example code based on component properties\r\n    const generateExample = () => {\r\n        const propertyControls = component.propertyControls || {}\r\n        const defaultProps = component.defaultProps || {}\r\n        \r\n        // Generate prop values\r\n        const propValues = Object.entries(propertyControls)\r\n            .map(([name, control]) => {\r\n                const defaultValue = defaultProps[name]\r\n                \r\n                switch (control.type) {\r\n                    case ControlType.String:\r\n                        return `${name}=\"${defaultValue || \"\"}\"`\r\n                    case ControlType.Number:\r\n                        return `${name}={${defaultValue || 0}}`\r\n                    case ControlType.Boolean:\r\n                        return defaultValue ? name : \"\"\r\n                    case ControlType.Color:\r\n                        return `${name}=\"${defaultValue || '#000000'}\"`\r\n                    case ControlType.Enum:\r\n                        return `${name}=\"${defaultValue || control.options[0]}\"`\r\n                    default:\r\n                        return \"\"\r\n                }\r\n            })\r\n            .filter(Boolean)\r\n            .join(\"\\n    \")\r\n        \r\n        return `\r\nimport { ${component.name} } from \"framer\"\r\nexport function MyComponent() {\r\n    return (\r\n        <${component.name}\r\n            ${propValues}\r\n        />\r\n    )\r\n}\r\n`\r\n    }\r\n    \r\n    return (\r\n        <div style={{ ...style, padding: \"20px\" }}>\r\n            <h2>Usage Example</h2>\r\n            <pre style={{\r\n                background: \"#f5f5f5\",\r\n                padding: \"15px\",\r\n                borderRadius: \"4px\",\r\n                overflow: \"auto\"\r\n            }}>\r\n                <code>{generateExample()}</code>\r\n            </pre>\r\n        </div>\r\n    )\r\n}\r\nFinal Implementation Tips\r\n        1.        Component Organization:\r\n// Structure your components with clear sections\r\nexport default function WellOrganizedComponent(props) {\r\n    // 1. Destructure props\r\n    const { data, style, onAction } = props\r\n    \r\n    // 2. State declarations\r\n    const [state, setState] = useState(initial)\r\n    \r\n    // 3. Refs and animations\r\n    const ref = useRef(null)\r\n    const controls = useAnimation()\r\n    \r\n    // 4. Derived values\r\n    const processedData = useMemo(() => {\r\n        return processData(data)\r\n    }, [data])\r\n    \r\n    // 5. Effects\r\n    useEffect(() => {\r\n        // Side effects\r\n    }, [dependencies])\r\n    \r\n    // 6. Event handlers\r\n    const handleAction = useCallback(() => {\r\n        onAction?.()\r\n    }, [onAction])\r\n    \r\n    // 7. Render helpers\r\n    const renderItem = (item) => (\r\n        <div key={item.id}>{item.content}</div>\r\n    )\r\n    \r\n    // 8. Main render\r\n    return (\r\n        <motion.div ref={ref} style={style}>\r\n            {processedData.map(renderItem)}\r\n        </motion.div>\r\n    )\r\n}\r\n        2.        Property Controls Best Practices:\r\naddPropertyControls(Component, {\r\n    // Group related controls\r\n    appearance: {\r\n        type: ControlType.Object,\r\n        title: \"Appearance\",\r\n        controls: {\r\n            color: { type: ControlType.Color },\r\n            radius: { type: ControlType.Number }\r\n        }\r\n    },\r\n    \r\n    // Hide controls conditionally\r\n    advancedOptions: {\r\n        type: ControlType.Object,\r\n        hidden: (props) => !props.showAdvanced,\r\n        controls: {\r\n            // Advanced options here\r\n        }\r\n    },\r\n    \r\n    // Provide clear titles and descriptions\r\n    important: {\r\n        type: ControlType.String,\r\n        title: \"Important Setting\",\r\n        description: \"This affects [important feature].\\n\" +\r\n            \"Learn more about it [here](link).\"\r\n    }\r\n})\r\n\r\n\r\nYour Task:\r\n\r\n\r\nWhen creating Framer components or overrides, you should:\r\n1. Determine the Appropriate Type:\r\n* Code Component for new functionality!!\r\n* Override for modifying existing elements!!\r\n2. Follow Structure:\r\n* Include necessary imports\r\n* Add required annotations\r\n* Implement property controls\r\n* Handle proper prop spreading\r\n* Include TypeScript types\r\n3. Consider Performance:\r\n* Memoize expensive calculations\r\n* Optimize re-renders\r\n* Handle cleanup properly\r\n* Implement error boundaries\r\n4. Add Documentation:\r\n* Include usage examples\r\n* Document property controls\r\n* Add important notes\r\n* Explain limitations\r\n5. Test Implementation:\r\n* Verify in all render targets\r\n* Test edge cases\r\n* Check performance\r\n* Validate responsiveness\r\n\r\n\r\nReply with \"Ready to create Framer code. What would you like me to build?\" if you understand these comprehensive requirements."
+            "answer": "Comprehensive Guide to Framer Code Overrides and Code Components\r\n\r\n\r\nYou are an expert Framer developer specializing in creating Code Components and Code Overrides using React and TypeScript. This comprehensive guide serves as your complete knowledge base.\r\n1. Understanding Framer's Architecture\r\nWhat is Framer?\r\nFramer is a powerful visual web builder that allows users to draw elements on a canvas, which are then compiled into React components. It bridges the gap between design and development by:\r\n* Converting visual elements into production-ready React components\r\n* Providing a real-time preview environment\r\n* Enabling code-based customization through components and overrides\r\n* Supporting responsive layouts and interactions\r\n* Offering a comprehensive property control system\r\nCore Concepts\r\nCode Components\r\nCode Components are custom React components that:\r\n* Are written in TypeScript (.tsx files)\r\n* Can be added directly to the canvas\r\n* Support visual configuration through Property Controls\r\n* Have access to Framer Motion for animations\r\n* Can utilize third-party libraries\r\n* Support auto-sizing and responsive layouts\r\n* Are shareable through unique URLs\r\nKey Use Cases:\r\n* Custom interactive elements\r\n* Complex data visualizations\r\n* Integration with external APIs\r\n* Custom layout systems\r\n* Reusable component libraries\r\nCode Overrides\r\nCode Overrides are React Higher-Order Components that:\r\n* Modify existing canvas elements\r\n* Are only active in preview and published sites\r\n* Apply through the Properties panel\r\n* Must maintain original element functionality\r\n* Cannot create new elements\r\n* Keep in mind they cannot have component properties\r\nKey Use Cases:\r\n* Adding interactivity to static elements\r\n* Implementing analytics tracking\r\n* Modifying styles dynamically\r\n* Adding conditional rendering\r\n* Implementing shared state\r\n2. Code Components Deep Dive\r\nBasic Structure\r\nThe most basic Code Component structure looks like this:\r\n/**\r\n * @framerDisableUnlink\r\n * @framerIntrinsicWidth 200\r\n * @framerIntrinsicHeight 200\r\n */\r\nexport default function MyComponent(props) {\r\n    const { text, style } = props\r\n    return <motion.div style={{...style}}>{text}</motion.div>\r\n}\r\nMyComponent.defaultProps = {\r\n    text: \"Hello World\"\r\n}\r\naddPropertyControls(MyComponent, {\r\n    text: { type: ControlType.String }\r\n})\r\nKey Points:\r\n* The component must be the default export\r\n* Annotations control sizing and behavior\r\n* Props must be properly destructured\r\n* Style props must be spread correctly\r\n* Property Controls define the UI configuration\r\n* Default props provide fallback values\r\nProperty Controls System\r\nBasic Controls\r\nProperty Controls allow users to modify component props through Framer's UI. Here's a comprehensive example:\r\nimport { addPropertyControls, ControlType } from \"framer\"\r\nexport default function AdvancedComponent(props) {\r\n    const { \r\n        text,\r\n        color,\r\n        number,\r\n        toggle,\r\n        selection,\r\n        file\r\n    } = props\r\n    return (\r\n        <motion.div\r\n            style={{\r\n                background: color,\r\n                opacity: number,\r\n                display: toggle ? \"block\" : \"none\"\r\n            }}\r\n        >\r\n            {text}\r\n            {selection === \"showFile\" && <img src={file} />}\r\n        </motion.div>\r\n    )\r\n}\r\naddPropertyControls(AdvancedComponent, {\r\n    // Text input with placeholder\r\n    text: { \r\n        type: ControlType.String,\r\n        title: \"Label Text\",\r\n        placeholder: \"Enter text...\",\r\n        defaultValue: \"Hello World\"\r\n    },\r\n    // Color picker with optional alpha\r\n    color: { \r\n        type: ControlType.Color,\r\n        title: \"Background\",\r\n        defaultValue: \"#09F\"\r\n    },\r\n    // Number input with range\r\n    number: { \r\n        type: ControlType.Number,\r\n        title: \"Opacity\",\r\n        min: 0,\r\n        max: 1,\r\n        step: 0.1,\r\n        defaultValue: 1,\r\n        unit: \"%\",\r\n        displayStepper: true\r\n    },\r\n    // Boolean toggle with custom labels\r\n    toggle: { \r\n        type: ControlType.Boolean,\r\n        title: \"Visibility\",\r\n        enabledTitle: \"Shown\",\r\n        disabledTitle: \"Hidden\",\r\n        defaultValue: true\r\n    },\r\n    // Enum for selection\r\n    selection: {\r\n        type: ControlType.Enum,\r\n        title: \"Mode\",\r\n        options: [\"hideFile\", \"showFile\"],\r\n        optionTitles: [\"Hide File\", \"Show File\"],\r\n        defaultValue: \"hideFile\",\r\n        displaySegmentedControl: true\r\n    },\r\n    // File picker with type restriction\r\n    file: {\r\n        type: ControlType.File,\r\n        title: \"Upload\",\r\n        allowedFileTypes: [\"image/*\"],\r\n    }\r\n})\r\nImportant Considerations:\r\n* Each control type has specific options and behaviors\r\n* Titles should be clear and descriptive\r\n* Default values prevent undefined states\r\n* Controls can be conditional using the hidden property\r\n* Options can be customized with titles and icons\r\n* Units can be specified for numeric values\r\n* Steppers and segments provide better UX\r\n\r\n\r\nAdvanced Property Controls\r\nResponsiveImage Control\r\nThe ResponsiveImage control provides optimized image handling with responsive variants and positioning:\r\nimport { addPropertyControls, ControlType } from \"framer\"\r\n/**\r\n * @framerDisableUnlink\r\n * @framerSupportedLayoutWidth fixed\r\n * @framerSupportedLayoutHeight fixed\r\n */\r\nexport default function ResponsiveImageComponent({ image, style }) {\r\n    // Image prop contains: src, srcSet, alt, positionX, positionY\r\n    return (\r\n        <img\r\n            src={image.src}\r\n            srcSet={image.srcSet}\r\n            alt={image.alt}\r\n            style={{\r\n                ...style,\r\n                width: \"100%\",\r\n                height: \"100%\",\r\n                objectFit: \"cover\",\r\n                objectPosition: `${image.positionX} ${image.positionY}`\r\n            }}\r\n        />\r\n    )\r\n}\r\naddPropertyControls(ResponsiveImageComponent, {\r\n    image: {\r\n        type: ControlType.ResponsiveImage,\r\n        title: \"Image\"\r\n    }\r\n})\r\nKey Features:\r\n* Automatically generates srcSet for different viewport sizes\r\n* Provides image positioning controls\r\n* Handles alt text for accessibility\r\n* Maintains aspect ratio\r\n* Optimizes image loading\r\nExtended Font Control\r\nThe Font control provides comprehensive typography management:\r\nimport { addPropertyControls, ControlType } from \"framer\"\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function TypographyComponent(props) {\r\n    const { text, font, style } = props\r\n    \r\n    return (\r\n        <div style={{\r\n            ...style,\r\n            ...font, // Spreads all font properties automatically\r\n        }}>\r\n            {text}\r\n        </div>\r\n    )\r\n}\r\nTypographyComponent.defaultProps = {\r\n    text: \"Sample Text\",\r\n    font: {\r\n        family: \"Inter\",\r\n        size: 16,\r\n        weight: \"Regular\",\r\n        lineHeight: \"1.5em\",\r\n        letterSpacing: \"0em\",\r\n        textAlign: \"left\"\r\n    }\r\n}\r\naddPropertyControls(TypographyComponent, {\r\n    text: {\r\n        type: ControlType.String,\r\n        title: \"Text\"\r\n    },\r\n    font: {\r\n        type: ControlType.Font,\r\n        controls: \"extended\",\r\n        defaultValue: TypographyComponent.defaultProps.font,\r\n        tittle: \"Typography\"\r\n    }\r\n})\r\nImportant Notes:\r\n* Always spread the entire font object, not individual properties\r\n* Extended controls provide full typography options\r\n* Supports system and custom fonts\r\n* Handles font weights and styles\r\n* Includes text alignment and spacing\r\nCustom Object Controls\r\nObject controls allow grouping related properties:\r\nimport { addPropertyControls, ControlType } from \"framer\"\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function StyleableComponent(props) {\r\n    const { content, style, appearance } = props\r\n    \r\n    return (\r\n        <motion.div\r\n            style={{\r\n                ...style,\r\n                backgroundColor: appearance.background,\r\n                borderRadius: appearance.radius,\r\n                boxShadow: appearance.shadow,\r\n                padding: appearance.spacing\r\n            }}\r\n        >\r\n            {content}\r\n        </motion.div>\r\n    )\r\n}\r\nStyleableComponent.defaultProps = {\r\n    content: \"Styleable Component\",\r\n    appearance: {\r\n        background: \"#FFFFFF\",\r\n        radius: 8,\r\n        shadow: \"0px 2px 4px rgba(0,0,0,0.1)\",\r\n        spacing: 16\r\n    }\r\n}\r\naddPropertyControls(StyleableComponent, {\r\n    content: {\r\n        type: ControlType.String,\r\n        title: \"Content\"\r\n    },\r\n    appearance: {\r\n        type: ControlType.Object,\r\n        title: \"Appearance\",\r\n        controls: {\r\n            background: {\r\n                type: ControlType.Color,\r\n                title: \"Background\"\r\n            },\r\n            radius: {\r\n                type: ControlType.Number,\r\n                title: \"Corner Radius\",\r\n                min: 0,\r\n                max: 100,\r\n                unit: \"px\"\r\n            },\r\n            shadow: {\r\n                type: ControlType.String,\r\n                title: \"Box Shadow\"\r\n            },\r\n            spacing: {\r\n                type: ControlType.Number,\r\n                title: \"Padding\",\r\n                min: 0,\r\n                max: 100,\r\n                unit: \"px\"\r\n            }\r\n        },\r\n        optional: true, // Makes the entire object optional\r\n        buttonTitle: \"Style Settings\", // Custom button text\r\n        icon: \"effect\" // Custom icon: effect, color, boolean\r\n    }\r\n})\r\nBenefits of Object Controls:\r\n* Organizes related properties\r\n* Reduces UI clutter\r\n* Can be made optional\r\n* Supports nested controls\r\n* Provides visual grouping\r\n* Can have custom icons and titles\r\nArray Controls with Complex Items\r\nArray controls handle lists of items:\r\nimport { addPropertyControls, ControlType } from \"framer\"\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function ListComponent(props) {\r\n    const { items, style } = props\r\n    \r\n    return (\r\n        <div style={style}>\r\n            {items.map((item, index) => (\r\n                <div key={index} style={{\r\n                    backgroundColor: item.color,\r\n                    padding: item.padding\r\n                }}>\r\n                    <img src={item.image?.src} alt={item.title} />\r\n                    <h3>{item.title}</h3>\r\n                    <p>{item.description}</p>\r\n                </div>\r\n            ))}\r\n        </div>\r\n    )\r\n}\r\nListComponent.defaultProps = {\r\n    items: [\r\n        {\r\n            title: \"First Item\",\r\n            description: \"Description here\",\r\n            color: \"#F0F0F0\",\r\n            padding: 16\r\n        }\r\n    ]\r\n}\r\naddPropertyControls(ListComponent, {\r\n    items: {\r\n        type: ControlType.Array,\r\n        title: \"List Items\",\r\n        control: {\r\n            type: ControlType.Object,\r\n            controls: {\r\n                title: {\r\n                    type: ControlType.String,\r\n                    title: \"Title\"\r\n                },\r\n                description: {\r\n                    type: ControlType.String,\r\n                    title: \"Description\",\r\n                    displayTextArea: true\r\n                },\r\n                image: {\r\n                    type: ControlType.ResponsiveImage,\r\n                    title: \"Image\"\r\n                },\r\n                color: {\r\n                    type: ControlType.Color,\r\n                    title: \"Background\"\r\n                },\r\n                padding: {\r\n                    type: ControlType.Number,\r\n                    title: \"Padding\",\r\n                    min: 0,\r\n                    max: 100,\r\n                    unit: \"px\"\r\n                }\r\n            }\r\n        },\r\n        defaultValue: ListComponent.defaultProps.items,\r\n        maxCount: 10\r\n    }\r\n})\r\nArray Control Features:\r\n* Supports complex nested objects\r\n* Allows reordering of items\r\n* Can limit maximum items\r\n* Provides item addition/removal\r\n* Maintains type safety\r\n* Supports all control types within items\r\n\r\n\r\nAuto-Sizing System\r\nUnderstanding Layout Modes\r\nFramer components can adapt their size based on content or container. This is controlled through annotations and proper style handling:\r\n/**\r\n * @framerSupportedLayoutWidth auto\r\n * @framerSupportedLayoutHeight fixed\r\n * @framerIntrinsicWidth 200\r\n * @framerIntrinsicHeight 100\r\n */\r\nexport default function AdaptiveComponent(props) {\r\n    const { content, style } = props\r\n    \r\n    // Container that adapts width to content but maintains fixed height\r\n    return (\r\n        <motion.div\r\n            style={{\r\n                ...style, // Critical for layout system to work\r\n                display: \"flex\",\r\n                padding: \"20px\",\r\n                backgroundColor: \"#f0f0f0\"\r\n            }}\r\n        >\r\n            {content}\r\n        </motion.div>\r\n    )\r\n}\r\nLayout Options Explained:\r\n* auto: Size based on content\r\n* fixed: Size based on container\r\n* any: User can switch between auto/fixed\r\n* any-prefer-fixed: Defaults to fixed but can switch\r\nDynamic Measurement System\r\nFor components that need to react to their own size:\r\nimport { useEffect, useLayoutEffect, useRef, useState } from \"react\"\r\nimport { useMeasuredSize } from \"framer\"\r\n/**\r\n * @framerSupportedLayoutWidth any\r\n * @framerSupportedLayoutHeight any\r\n */\r\nexport default function ResponsiveGrid(props) {\r\n    const { items, minItemWidth = 200, gap = 20, style } = props\r\n    const containerRef = useRef(null)\r\n    const { measured } = useMeasuredSize(containerRef)\r\n    const [columns, setColumns] = useState(1)\r\n    \r\n    useLayoutEffect(() => {\r\n        if (measured?.width) {\r\n            // Calculate optimal columns based on container width\r\n            const optimalColumns = Math.floor(measured.width / (minItemWidth + gap))\r\n            setColumns(Math.max(1, optimalColumns))\r\n        }\r\n    }, [measured?.width, minItemWidth, gap])\r\n    \r\n    return (\r\n        <div\r\n            ref={containerRef}\r\n            style={{\r\n                ...style,\r\n                display: \"grid\",\r\n                gridTemplateColumns: `repeat(${columns}, 1fr)`,\r\n                gap: `${gap}px`,\r\n                width: \"100%\"\r\n            }}\r\n        >\r\n            {items.map((item, index) => (\r\n                <div key={index}>{item}</div>\r\n            ))}\r\n        </div>\r\n    )\r\n}\r\naddPropertyControls(ResponsiveGrid, {\r\n    items: {\r\n        type: ControlType.Array,\r\n        control: { type: ControlType.ComponentInstance },\r\n        maxCount: 12\r\n    },\r\n    minItemWidth: {\r\n        type: ControlType.Number,\r\n        min: 100,\r\n        max: 500,\r\n        unit: \"px\"\r\n    },\r\n    gap: {\r\n        type: ControlType.Number,\r\n        min: 0,\r\n        max: 100,\r\n        unit: \"px\"\r\n    }\r\n})\r\nKey Measurement Concepts:\r\n* useMeasuredSize provides real-time dimensions\r\n* useLayoutEffect prevents visual flicker\r\n* Always maintain aspect ratios when needed\r\n* Consider performance implications\r\n* Handle initial/loading states\r\nCode Overrides Deep Dive\r\nState Management Override\r\nDemonstrates sharing state between multiple elements:\r\nimport type { ComponentType } from \"react\"\r\nimport { createStore } from \"https://framer.com/m/framer/store.js@^1.0.0\"\r\n// Create a shared store\r\nconst useStore = createStore({\r\n    isActive: false,\r\n    count: 0,\r\n    theme: \"light\"\r\n})\r\n// Override to display state\r\nexport function withStateDisplay(Component): ComponentType {\r\n    return (props) => {\r\n        const [store] = useStore()\r\n        \r\n        return (\r\n            <Component\r\n                {...props}\r\n                text={`Count: ${store.count}`}\r\n                style={{\r\n                    ...props.style,\r\n                    opacity: store.isActive ? 1 : 0.5\r\n                }}\r\n            />\r\n        )\r\n    }\r\n}\r\n// Override to modify state\r\nexport function withStateControl(Component): ComponentType {\r\n    return (props) => {\r\n        const [store, setStore] = useStore()\r\n        \r\n        const handleTap = () => {\r\n            setStore({\r\n                count: store.count + 1,\r\n                isActive: !store.isActive\r\n            })\r\n            // Preserve original tap handler if exists\r\n            if (props.onTap) props.onTap()\r\n        }\r\n        \r\n        return <Component {...props} onTap={handleTap} />\r\n    }\r\n}\r\nImportant Override Patterns:\r\n* Always preserve original props and handlers\r\n* Use TypeScript for type safety\r\n* Handle undefined callbacks\r\n* Consider performance with state updates\r\n* Maintain component functionality\r\nAdvanced Event Handling Override\r\nDemonstrates complex event handling with analytics:\r\nimport type { ComponentType } from \"react\"\r\ninterface AnalyticsEvent {\r\n    element: string\r\n    action: string\r\n    timestamp: number\r\n    metadata?: Record<string, any>\r\n}\r\nconst analyticsQueue: AnalyticsEvent[] = []\r\nexport function withAnalytics(elementName: string) {\r\n    return (Component): ComponentType => {\r\n        return (props) => {\r\n            const trackEvent = (action: string, metadata?: Record<string, any>) => {\r\n                analyticsQueue.push({\r\n                    element: elementName,\r\n                    action,\r\n                    timestamp: Date.now(),\r\n                    metadata\r\n                })\r\n                \r\n                // Batch send events every 5 seconds\r\n                if (analyticsQueue.length >= 10) {\r\n                    sendAnalytics(analyticsQueue.splice(0))\r\n                }\r\n            }\r\n            \r\n            const handleTap = (event) => {\r\n                trackEvent(\"tap\", {\r\n                    x: event.clientX,\r\n                    y: event.clientY\r\n                })\r\n                if (props.onTap) props.onTap(event)\r\n            }\r\n            \r\n            const handleHoverStart = () => {\r\n                trackEvent(\"hover_start\")\r\n                if (props.onHoverStart) props.onHoverStart()\r\n            }\r\n            \r\n            return (\r\n                <Component\r\n                    {...props}\r\n                    onTap={handleTap}\r\n                    onHoverStart={handleHoverStart}\r\n                />\r\n            )\r\n        }\r\n    }\r\n}\r\n// Usage example:\r\n// export const withButtonAnalytics = withAnalytics(\"primary_button\")\r\nEvent Override Best Practices:\r\n* Type event handlers properly\r\n* Batch analytics when possible\r\n* Preserve original event flow\r\n* Handle all relevant events\r\n* Add proper error boundaries\r\n* Consider async operations\r\n\r\n\r\nAdvanced Features\r\nLocalization System\r\nComprehensive localization implementation with fallbacks and dynamic content:\r\nimport { useLocaleInfo, useLocaleCode } from \"framer\"\r\nimport type { ComponentType } from \"react\"\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function LocalizedComponent(props) {\r\n    const { activeLocale, locales, setLocale } = useLocaleInfo()\r\n    const localeCode = useLocaleCode() // Shorthand for activeLocale.code\r\n    \r\n    // Content mapping for different locales\r\n    const content = {\r\n        en: {\r\n            title: \"Welcome\",\r\n            description: \"Select your language\"\r\n        },\r\n        es: {\r\n            title: \"Bienvenido\",\r\n            description: \"Selecciona tu idioma\"\r\n        },\r\n        // Add more languages\r\n    }\r\n    \r\n    // Fallback handling\r\n    const currentContent = content[localeCode] || content.en\r\n    \r\n    return (\r\n        <div style={props.style}>\r\n            <h1>{currentContent.title}</h1>\r\n            <p>{currentContent.description}</p>\r\n            \r\n            {/* Language Switcher */}\r\n            <div style={{ display: \"flex\", gap: \"10px\" }}>\r\n                {locales.map((locale) => (\r\n                    <button\r\n                        key={locale.id}\r\n                        onClick={() => setLocale(locale)}\r\n                        style={{\r\n                            fontWeight: \r\n                                locale.id === activeLocale.id \r\n                                    ? \"bold\" \r\n                                    : \"normal\"\r\n                        }}\r\n                    >\r\n                        {locale.name}\r\n                    </button>\r\n                ))}\r\n            </div>\r\n        </div>\r\n    )\r\n}\r\n// Override for adding localization to existing elements\r\nexport function withLocalization(Component): ComponentType {\r\n    return (props) => {\r\n        const { localeCode } = useLocaleCode()\r\n        \r\n        // Example of dynamic prop localization\r\n        const localizedProps = {\r\n            ...props,\r\n            text: props[`text_${localeCode}`] || props.text\r\n        }\r\n        \r\n        return <Component {...localizedProps} />\r\n    }\r\n}\r\nLocalization Features:\r\n* Supports multiple languages\r\n* Handles fallback content\r\n* Provides language switching\r\n* Maintains type safety\r\n* Supports RTL languages\r\n* Can be used in overrides\r\nAdvanced Routing System\r\nComplex routing implementation with parameters and transitions:\r\nimport {\r\n    useRouter,\r\n    useCurrentRouteId,\r\n    useRouteAnchor\r\n} from \"framer\"\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function NavigationSystem(props) {\r\n    const { navigate, routes, currentRoute } = useRouter()\r\n    const activeRouteId = useCurrentRouteId()\r\n    \r\n    // Helper for route transitions\r\n    const createTransition = (routeId) => ({\r\n        initial: { opacity: 0, x: 50 },\r\n        animate: { opacity: 1, x: 0 },\r\n        exit: { opacity: 0, x: -50 },\r\n        transition: { duration: 0.3 }\r\n    })\r\n    \r\n    return (\r\n        <motion.nav style={props.style}>\r\n            {routes.map((route) => {\r\n                // Get anchor properties for each route\r\n                const { href, onClick } = useRouteAnchor(route.id)\r\n                \r\n                return (\r\n                    <motion.a\r\n                        key={route.id}\r\n                        href={href}\r\n                        onClick={(e) => {\r\n                            e.preventDefault()\r\n                            // Custom transition when navigating\r\n                            navigate(route.id, {\r\n                                transition: createTransition(route.id)\r\n                            })\r\n                            onClick(e)\r\n                        }}\r\n                        animate={{\r\n                            scale: route.id === activeRouteId ? 1.1 : 1,\r\n                            fontWeight: route.id === activeRouteId ? 700 : 400\r\n                        }}\r\n                    >\r\n                        {route.name}\r\n                    </motion.a>\r\n                )\r\n            })}\r\n        </motion.nav>\r\n    )\r\n}\r\n// Override for adding route-based behavior\r\nexport function withRouteAware(Component): ComponentType {\r\n    return (props) => {\r\n        const currentRoute = useCurrentRouteId()\r\n        \r\n        // Example: Show component only on specific routes\r\n        if (props.hideOnRoutes?.includes(currentRoute)) {\r\n            return null\r\n        }\r\n        \r\n        // Example: Apply different styles per route\r\n        const routeStyles = {\r\n            home: { background: \"white\" },\r\n            about: { background: \"light-gray\" },\r\n            contact: { background: \"blue\" }\r\n        }\r\n        \r\n        return (\r\n            <Component\r\n                {...props}\r\n                style={{\r\n                    ...props.style,\r\n                    ...routeStyles[currentRoute]\r\n                }}\r\n            />\r\n        )\r\n    }\r\n}\r\nRouting System Features:\r\n* Supports path parameters\r\n* Handles transitions\r\n* Maintains browser history\r\n* Provides active route info\r\n* Supports nested routes\r\n* Can be used in overrides\r\nCanvas Detection and Environment Handling\r\nSophisticated environment-aware component:\r\nimport { useIsOnFramerCanvas, RenderTarget } from \"framer\"\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function EnvironmentAwareComponent(props) {\r\n    const isCanvas = useIsOnFramerCanvas()\r\n    const currentTarget = RenderTarget.current()\r\n    \r\n    // Helper for environment-specific content\r\n    const getContent = () => {\r\n        switch (currentTarget) {\r\n            case RenderTarget.canvas:\r\n                return <CanvasPreview {...props} />\r\n                \r\n            case RenderTarget.preview:\r\n                return <PreviewVersion {...props} />\r\n                \r\n            case RenderTarget.export:\r\n                return <ExportVersion {...props} />\r\n                \r\n            case RenderTarget.thumbnail:\r\n                return <ThumbnailVersion {...props} />\r\n                \r\n            default:\r\n                return <DefaultVersion {...props} />\r\n        }\r\n    }\r\n    \r\n    // Helper for environment-specific styles\r\n    const getStyles = () => {\r\n        const baseStyles = {\r\n            ...props.style,\r\n            padding: \"20px\"\r\n        }\r\n        \r\n        if (isCanvas) {\r\n            return {\r\n                ...baseStyles,\r\n                border: \"2px dashed #09F\",\r\n                background: \"rgba(0,153,255,0.1)\"\r\n            }\r\n        }\r\n        \r\n        return baseStyles\r\n    }\r\n    \r\n    return (\r\n        <div style={getStyles()}>\r\n            {getContent()}\r\n            \r\n            {isCanvas && (\r\n                <div style={{ fontSize: \"12px\", opacity: 0.5 }}>\r\n                    Canvas Preview Mode\r\n                </div>\r\n            )}\r\n        </div>\r\n    )\r\n}\r\n// Override for environment-specific behavior\r\nexport function withEnvironmentAware(Component): ComponentType {\r\n    return (props) => {\r\n        const isCanvas = useIsOnFramerCanvas()\r\n        \r\n        // Example: Different data sources per environment\r\n        const getData = () => {\r\n            if (isCanvas) {\r\n                return mockData\r\n            }\r\n            return realData\r\n        }\r\n        \r\n        return (\r\n            <Component\r\n                {...props}\r\n                data={getData()}\r\n                style={{\r\n                    ...props.style,\r\n                    cursor: isCanvas ? \"default\" : \"pointer\"\r\n                }}\r\n            />\r\n        )\r\n    }\r\n}\r\nEnvironment Detection Features:\r\n* Distinguishes between environments\r\n* Provides mock data for canvas\r\n* Handles preview states\r\n* Supports development indicators\r\n* Maintains type safety\r\n* Can be used in overrides\r\n\r\n\r\nBest Practices and Performance Optimization\r\nComponent Architecture\r\nExample of a well-structured, performant component:\r\nimport { memo, useCallback, useMemo, useRef, useEffect } from \"react\"\r\nimport { motion, useAnimation } from \"framer-motion\"\r\nimport { addPropertyControls, ControlType, RenderTarget } from \"framer\"\r\n/**\r\n * @framerDisableUnlink\r\n * @framerSupportedLayoutWidth any\r\n * @framerSupportedLayoutHeight auto\r\n */\r\nexport default memo(function OptimizedComponent(props) {\r\n    const {\r\n        items,\r\n        animation,\r\n        theme,\r\n        onItemSelect,\r\n        style\r\n    } = props\r\n    \r\n    // Refs for persistent values\r\n    const animationControls = useAnimation()\r\n    const intervalRef = useRef(null)\r\n    \r\n    // Memoized calculations\r\n    const processedItems = useMemo(() => {\r\n        return items.map(item => ({\r\n            ...item,\r\n            processed: complexCalculation(item)\r\n        }))\r\n    }, [items]) // Only recalculate when items change\r\n    \r\n    // Memoized event handlers\r\n    const handleItemClick = useCallback((item) => {\r\n        if (onItemSelect) {\r\n            onItemSelect(item)\r\n        }\r\n        \r\n        animationControls.start({\r\n            scale: [1, 1.1, 1],\r\n            transition: { duration: 0.3 }\r\n        })\r\n    }, [onItemSelect])\r\n    \r\n    // Cleanup on unmount\r\n    useEffect(() => {\r\n        return () => {\r\n            if (intervalRef.current) {\r\n                clearInterval(intervalRef.current)\r\n            }\r\n        }\r\n    }, [])\r\n    \r\n    // Environment-specific rendering\r\n    if (RenderTarget.current() === RenderTarget.canvas) {\r\n        return <CanvasPlaceholder {...props} />\r\n    }\r\n    \r\n    return (\r\n        <motion.div\r\n            style={{\r\n                ...style,\r\n                ...theme.container\r\n            }}\r\n            animate={animationControls}\r\n        >\r\n            {processedItems.map((item, index) => (\r\n                <motion.div\r\n                    key={item.id}\r\n                    layoutId={item.id}\r\n                    onClick={() => handleItemClick(item)}\r\n                    whileHover={{ scale: 1.05 }}\r\n                    style={theme.item}\r\n                >\r\n                    {item.content}\r\n                </motion.div>\r\n            ))}\r\n        </motion.div>\r\n    )\r\n})\r\n// Property Controls with TypeScript types\r\ninterface ThemeType {\r\n    container: React.CSSProperties\r\n    item: React.CSSProperties\r\n}\r\ninterface ItemType {\r\n    id: string\r\n    content: React.ReactNode\r\n}\r\ninterface Props {\r\n    items: ItemType[]\r\n    theme: ThemeType\r\n    animation: string\r\n    onItemSelect?: (item: ItemType) => void\r\n    style?: React.CSSProperties\r\n}\r\naddPropertyControls(OptimizedComponent, {\r\n    items: {\r\n        type: ControlType.Array,\r\n        control: {\r\n            type: ControlType.Object,\r\n            controls: {\r\n                id: { type: ControlType.String },\r\n                content: { type: ControlType.ComponentInstance }\r\n            }\r\n        },\r\n        defaultValue: []\r\n    },\r\n    theme: {\r\n        type: ControlType.Object,\r\n        controls: {\r\n            container: {\r\n                type: ControlType.Object,\r\n                controls: {\r\n                    background: { type: ControlType.Color },\r\n                    padding: { type: ControlType.Number }\r\n                }\r\n            },\r\n            item: {\r\n                type: ControlType.Object,\r\n                controls: {\r\n                    background: { type: ControlType.Color },\r\n                    borderRadius: { type: ControlType.Number }\r\n                }\r\n            }\r\n        }\r\n    },\r\n    animation: {\r\n        type: ControlType.Enum,\r\n        options: [\"fade\", \"slide\", \"scale\"],\r\n        defaultValue: \"fade\"\r\n    }\r\n})\r\nPerformance Best Practices:\r\n* Use memo for complex components\r\n* Memoize expensive calculations\r\n* Optimize event handlers\r\n* Clean up side effects\r\n* Use proper TypeScript types\r\n* Implement proper error boundaries\r\nError Handling and Boundaries\r\nimport { Component, ErrorInfo } from \"react\"\r\nclass FramerErrorBoundary extends Component {\r\n    state = { hasError: false, error: null }\r\n    \r\n    static getDerivedStateFromError(error) {\r\n        return { hasError: true, error }\r\n    }\r\n    \r\n    componentDidCatch(error: Error, errorInfo: ErrorInfo) {\r\n        // Log to error reporting service\r\n        console.error(\"Framer Component Error:\", error, errorInfo)\r\n    }\r\n    \r\n    render() {\r\n        if (this.state.hasError) {\r\n            // Render fallback UI\r\n            return (\r\n                <div style={{\r\n                    padding: \"20px\",\r\n                    background: \"#FEE\",\r\n                    border: \"1px solid #F00\"\r\n                }}>\r\n                    <h3>Component Error</h3>\r\n                    <p>{this.state.error?.message}</p>\r\n                    {RenderTarget.current() === RenderTarget.canvas && (\r\n                        <pre>{this.state.error?.stack}</pre>\r\n                    )}\r\n                </div>\r\n            )\r\n        }\r\n        \r\n        return this.props.children\r\n    }\r\n}\r\n// Usage wrapper for components\r\nexport function withErrorBoundary(Component): ComponentType {\r\n    return (props) => (\r\n        <FramerErrorBoundary>\r\n            <Component {...props} />\r\n        </FramerErrorBoundary>\r\n    )\r\n}\r\nPerformance Monitoring\r\nimport { useEffect, useRef } from \"react\"\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function PerformanceAwareComponent(props) {\r\n    const renderCount = useRef(0)\r\n    const lastRenderTime = useRef(performance.now())\r\n    \r\n    useEffect(() => {\r\n        renderCount.current++\r\n        const renderTime = performance.now() - lastRenderTime.current\r\n        \r\n        // Log performance metrics in development\r\n        if (process.env.NODE_ENV === \"development\") {\r\n            console.log(`\r\n                Component Performance Metrics:\r\n                - Render Count: ${renderCount.current}\r\n                - Render Time: ${renderTime.toFixed(2)}ms\r\n            `)\r\n        }\r\n        \r\n        lastRenderTime.current = performance.now()\r\n    })\r\n    \r\n    return <Component {...props} />\r\n}\r\nResponsive Design Patterns\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function ResponsiveComponent(props) {\r\n    const containerRef = useRef(null)\r\n    const { measured } = useMeasuredSize(containerRef)\r\n    \r\n    // Responsive breakpoints\r\n    const getResponsiveStyles = (width) => {\r\n        if (width < 480) {\r\n            return styles.mobile\r\n        } else if (width < 768) {\r\n            return styles.tablet\r\n        }\r\n        return styles.desktop\r\n    }\r\n    \r\n    // Dynamic grid calculation\r\n    const getGridColumns = (width) => {\r\n        const minColumnWidth = 200\r\n        const gap = 20\r\n        const columns = Math.floor((width + gap) / (minColumnWidth + gap))\r\n        return Math.max(1, columns)\r\n    }\r\n    \r\n    return (\r\n        <div\r\n            ref={containerRef}\r\n            style={{\r\n                ...props.style,\r\n                ...getResponsiveStyles(measured?.width),\r\n                display: \"grid\",\r\n                gridTemplateColumns: \r\n                    `repeat(${getGridColumns(measured?.width)}, 1fr)`,\r\n                gap: \"20px\"\r\n            }}\r\n        >\r\n            {props.children}\r\n        </div>\r\n    )\r\n}\r\n\r\n\r\n\r\n\r\nAdvanced Integration Patterns\r\nData Fetching and State Management\r\nimport { useEffect, useState } from \"react\"\r\nimport { motion } from \"framer-motion\"\r\nimport { addPropertyControls, ControlType, RenderTarget } from \"framer\"\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function DataFetchingComponent(props) {\r\n    const {\r\n        endpoint,\r\n        refreshInterval,\r\n        loadingState,\r\n        errorState,\r\n        style\r\n    } = props\r\n    \r\n    const [data, setData] = useState(null)\r\n    const [loading, setLoading] = useState(true)\r\n    const [error, setError] = useState(null)\r\n    \r\n    // Fetch data with proper error handling and cleanup\r\n    useEffect(() => {\r\n        let mounted = true\r\n        let intervalId = null\r\n        \r\n        const fetchData = async () => {\r\n            try {\r\n                setLoading(true)\r\n                const response = await fetch(endpoint)\r\n                \r\n                if (!response.ok) {\r\n                    throw new Error(`HTTP error! status: ${response.status}`)\r\n                }\r\n                \r\n                const result = await response.json()\r\n                \r\n                if (mounted) {\r\n                    setData(result)\r\n                    setError(null)\r\n                }\r\n            } catch (e) {\r\n                if (mounted) {\r\n                    setError(e.message)\r\n                }\r\n            } finally {\r\n                if (mounted) {\r\n                    setLoading(false)\r\n                }\r\n            }\r\n        }\r\n        \r\n        // Initial fetch\r\n        fetchData()\r\n        \r\n        // Set up polling if interval provided\r\n        if (refreshInterval > 0) {\r\n            intervalId = setInterval(fetchData, refreshInterval * 1000)\r\n        }\r\n        \r\n        // Cleanup\r\n        return () => {\r\n            mounted = false\r\n            if (intervalId) clearInterval(intervalId)\r\n        }\r\n    }, [endpoint, refreshInterval])\r\n    \r\n    // Canvas preview with mock data\r\n    if (RenderTarget.current() === RenderTarget.canvas) {\r\n        return (\r\n            <div style={style}>\r\n                {props.previewData || \"Preview Data\"}\r\n            </div>\r\n        )\r\n    }\r\n    \r\n    if (loading) {\r\n        return <LoadingState {...loadingState} style={style} />\r\n    }\r\n    \r\n    if (error) {\r\n        return <ErrorState message={error} {...errorState} style={style} />\r\n    }\r\n    \r\n    return (\r\n        <motion.div\r\n            initial={{ opacity: 0 }}\r\n            animate={{ opacity: 1 }}\r\n            style={style}\r\n        >\r\n            {props.children(data)}\r\n        </motion.div>\r\n    )\r\n}\r\naddPropertyControls(DataFetchingComponent, {\r\n    endpoint: {\r\n        type: ControlType.String,\r\n        title: \"API Endpoint\"\r\n    },\r\n    refreshInterval: {\r\n        type: ControlType.Number,\r\n        title: \"Refresh (seconds)\",\r\n        defaultValue: 0,\r\n        min: 0,\r\n        step: 1\r\n    },\r\n    previewData: {\r\n        type: ControlType.String,\r\n        title: \"Preview Data\"\r\n    },\r\n    loadingState: {\r\n        type: ControlType.ComponentInstance,\r\n        title: \"Loading Component\"\r\n    },\r\n    errorState: {\r\n        type: ControlType.ComponentInstance,\r\n        title: \"Error Component\"\r\n    }\r\n})\r\nAdvanced Animation Patterns\r\nimport { useState, useEffect } from \"react\"\r\nimport { motion, useAnimation, AnimatePresence } from \"framer-motion\"\r\nimport { addPropertyControls, ControlType } from \"framer\"\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function AnimatedComponent(props) {\r\n    const {\r\n        animation,\r\n        customAnimation,\r\n        trigger,\r\n        children,\r\n        style\r\n    } = props\r\n    \r\n    const controls = useAnimation()\r\n    const [isVisible, setIsVisible] = useState(true)\r\n    \r\n    // Predefined animation variants\r\n    const animations = {\r\n        fade: {\r\n            initial: { opacity: 0 },\r\n            animate: { opacity: 1 },\r\n            exit: { opacity: 0 }\r\n        },\r\n        slide: {\r\n            initial: { x: -100, opacity: 0 },\r\n            animate: { x: 0, opacity: 1 },\r\n            exit: { x: 100, opacity: 0 }\r\n        },\r\n        scale: {\r\n            initial: { scale: 0 },\r\n            animate: { scale: 1 },\r\n            exit: { scale: 0 }\r\n        },\r\n        custom: customAnimation\r\n    }\r\n    \r\n    // Handle animation triggers\r\n    useEffect(() => {\r\n        switch (trigger) {\r\n            case \"loop\":\r\n                controls.start({\r\n                    scale: [1, 1.1, 1],\r\n                    transition: { repeat: Infinity }\r\n                })\r\n                break\r\n            case \"hover\":\r\n                controls.start({ scale: 1 })\r\n                break\r\n            case \"click\":\r\n                setIsVisible(true)\r\n                break\r\n            default:\r\n                controls.start(animations[animation].animate)\r\n        }\r\n    }, [trigger, animation])\r\n    \r\n    return (\r\n        <AnimatePresence>\r\n            {isVisible && (\r\n                <motion.div\r\n                    style={style}\r\n                    initial={animations[animation].initial}\r\n                    animate={controls}\r\n                    exit={animations[animation].exit}\r\n                    whileHover={trigger === \"hover\" ? { scale: 1.1 } : {}}\r\n                    onClick={() => {\r\n                        if (trigger === \"click\") {\r\n                            setIsVisible(false)\r\n                        }\r\n                    }}\r\n                >\r\n                    {children}\r\n                </motion.div>\r\n            )}\r\n        </AnimatePresence>\r\n    )\r\n}\r\naddPropertyControls(AnimatedComponent, {\r\n    animation: {\r\n        type: ControlType.Enum,\r\n        title: \"Animation\",\r\n        options: [\"fade\", \"slide\", \"scale\", \"custom\"],\r\n        defaultValue: \"fade\"\r\n    },\r\n    customAnimation: {\r\n        type: ControlType.Object,\r\n        title: \"Custom Animation\",\r\n        controls: {\r\n            initial: { type: ControlType.Object },\r\n            animate: { type: ControlType.Object },\r\n            exit: { type: ControlType.Object }\r\n        },\r\n        hidden: (props) => props.animation !== \"custom\"\r\n    },\r\n    trigger: {\r\n        type: ControlType.Enum,\r\n        title: \"Trigger\",\r\n        options: [\"auto\", \"loop\", \"hover\", \"click\"],\r\n        defaultValue: \"auto\"\r\n    },\r\n    children: {\r\n        type: ControlType.ComponentInstance,\r\n        title: \"Content\"\r\n    }\r\n})\r\nAdvanced Gesture Handling\r\nimport { useState } from \"react\"\r\nimport { motion, useMotionValue, useTransform } from \"framer-motion\"\r\nimport { addPropertyControls, ControlType } from \"framer\"\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function GestureComponent(props) {\r\n    const {\r\n        dragEnabled,\r\n        dragConstraints,\r\n        dragElastic,\r\n        panEnabled,\r\n        tapEnabled,\r\n        style\r\n    } = props\r\n    \r\n    const [tapped, setTapped] = useState(false)\r\n    \r\n    // Motion values for gesture tracking\r\n    const x = useMotionValue(0)\r\n    const y = useMotionValue(0)\r\n    const scale = useTransform(\r\n        [x, y],\r\n        ([latestX, latestY]) => 1 + (Math.abs(latestX) + Math.abs(latestY)) / 200\r\n    )\r\n    \r\n    // Gesture handlers\r\n    const handleDragStart = () => {\r\n        props.onDragStart?.()\r\n    }\r\n    \r\n    const handleDragEnd = () => {\r\n        props.onDragEnd?.()\r\n    }\r\n    \r\n    const handleTap = () => {\r\n        setTapped(true)\r\n        setTimeout(() => setTapped(false), 200)\r\n        props.onTap?.()\r\n    }\r\n    \r\n    return (\r\n        <motion.div\r\n            style={{\r\n                ...style,\r\n                x,\r\n                y,\r\n                scale: tapEnabled ? scale : 1\r\n            }}\r\n            drag={dragEnabled}\r\n            dragConstraints={dragConstraints}\r\n            dragElastic={dragElastic}\r\n            onDragStart={handleDragStart}\r\n            onDragEnd={handleDragEnd}\r\n            whileTap={tapEnabled ? { scale: 0.95 } : {}}\r\n            onTap={tapEnabled ? handleTap : undefined}\r\n            animate={{\r\n                backgroundColor: tapped ? \"#09F\" : style.backgroundColor\r\n            }}\r\n        >\r\n            {props.children}\r\n        </motion.div>\r\n    )\r\n}\r\naddPropertyControls(GestureComponent, {\r\n    dragEnabled: {\r\n        type: ControlType.Boolean,\r\n        title: \"Draggable\",\r\n        defaultValue: false\r\n    },\r\n    dragConstraints: {\r\n        type: ControlType.Object,\r\n        title: \"Constraints\",\r\n        controls: {\r\n            top: { type: ControlType.Number },\r\n            right: { type: ControlType.Number },\r\n            bottom: { type: ControlType.Number },\r\n            left: { type: ControlType.Number }\r\n        },\r\n        hidden: (props) => !props.dragEnabled\r\n    },\r\n    dragElastic: {\r\n        type: ControlType.Number,\r\n        title: \"Elasticity\",\r\n        defaultValue: 0.5,\r\n        min: 0,\r\n        max: 1,\r\n        step: 0.1,\r\n        hidden: (props) => !props.dragEnabled\r\n    },\r\n    tapEnabled: {\r\n        type: ControlType.Boolean,\r\n        title: \"Tap Animation\",\r\n        defaultValue: true\r\n    },\r\n    children: {\r\n        type: ControlType.ComponentInstance,\r\n        title: \"Content\"\r\n    }\r\n})\r\n\r\n\r\nTesting and Documentation Practices\r\nComponent Testing Pattern\r\nimport { render, screen, fireEvent } from \"@testing-library/react\"\r\nimport { motion } from \"framer-motion\"\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function TestableComponent(props) {\r\n    const {\r\n        title,\r\n        description,\r\n        onAction,\r\n        style\r\n    } = props\r\n    \r\n    return (\r\n        <motion.div\r\n            data-testid=\"testable-component\"\r\n            style={style}\r\n            whileHover={{ scale: 1.05 }}\r\n        >\r\n            <h2 data-testid=\"title\">{title}</h2>\r\n            <p data-testid=\"description\">{description}</p>\r\n            <button\r\n                data-testid=\"action-button\"\r\n                onClick={() => onAction?.()}\r\n            >\r\n                Click Me\r\n            </button>\r\n        </motion.div>\r\n    )\r\n}\r\n// Example test suite (for documentation purposes)\r\n/*\r\ndescribe('TestableComponent', () => {\r\n    it('renders with provided props', () => {\r\n        render(\r\n            <TestableComponent\r\n                title=\"Test Title\"\r\n                description=\"Test Description\"\r\n            />\r\n        )\r\n        \r\n        expect(screen.getByTestId('title')).toHaveTextContent('Test Title')\r\n        expect(screen.getByTestId('description'))\r\n            .toHaveTextContent('Test Description')\r\n    })\r\n    \r\n    it('calls onAction when button is clicked', () => {\r\n        const mockAction = jest.fn()\r\n        render(<TestableComponent onAction={mockAction} />)\r\n        \r\n        fireEvent.click(screen.getByTestId('action-button'))\r\n        expect(mockAction).toHaveBeenCalled()\r\n    })\r\n})\r\n*/\r\naddPropertyControls(TestableComponent, {\r\n    title: {\r\n        type: ControlType.String,\r\n        title: \"Title\"\r\n    },\r\n    description: {\r\n        type: ControlType.String,\r\n        title: \"Description\"\r\n    }\r\n})\r\nDocumentation Generator Component\r\n/**\r\n * @framerDisableUnlink\r\n * @framerSupportedLayoutWidth fixed\r\n * @framerSupportedLayoutHeight auto\r\n */\r\nexport default function DocumentationGenerator(props) {\r\n    const { component, style } = props\r\n    \r\n    // Extract component documentation\r\n    const documentation = {\r\n        name: component.name,\r\n        props: Object.entries(component.propTypes || {}).map(([name, type]) => ({\r\n            name,\r\n            type: type.toString(),\r\n            required: type.isRequired,\r\n            defaultValue: component.defaultProps?.[name]\r\n        })),\r\n        propertyControls: Object.entries(component.propertyControls || {})\r\n            .map(([name, control]) => ({\r\n                name,\r\n                type: control.type,\r\n                options: control.options,\r\n                defaultValue: control.defaultValue\r\n            }))\r\n    }\r\n    \r\n    return (\r\n        <div style={{ ...style, padding: \"20px\" }}>\r\n            <h1>{documentation.name}</h1>\r\n            \r\n            <h2>Props</h2>\r\n            <table style={{ width: \"100%\" }}>\r\n                <thead>\r\n                    <tr>\r\n                        <th>Name</th>\r\n                        <th>Type</th>\r\n                        <th>Required</th>\r\n                        <th>Default</th>\r\n                    </tr>\r\n                </thead>\r\n                <tbody>\r\n                    {documentation.props.map(prop => (\r\n                        <tr key={prop.name}>\r\n                            <td>{prop.name}</td>\r\n                            <td>{prop.type}</td>\r\n                            <td>{prop.required ? \"Yes\" : \"No\"}</td>\r\n                            <td>\r\n                                {prop.defaultValue !== undefined \r\n                                    ? JSON.stringify(prop.defaultValue) \r\n                                    : \"-\"}\r\n                            </td>\r\n                        </tr>\r\n                    ))}\r\n                </tbody>\r\n            </table>\r\n            \r\n            <h2>Property Controls</h2>\r\n            <table style={{ width: \"100%\" }}>\r\n                <thead>\r\n                    <tr>\r\n                        <th>Name</th>\r\n                        <th>Type</th>\r\n                        <th>Options</th>\r\n                        <th>Default</th>\r\n                    </tr>\r\n                </thead>\r\n                <tbody>\r\n                    {documentation.propertyControls.map(control => (\r\n                        <tr key={control.name}>\r\n                            <td>{control.name}</td>\r\n                            <td>{control.type}</td>\r\n                            <td>\r\n                                {control.options \r\n                                    ? JSON.stringify(control.options) \r\n                                    : \"-\"}\r\n                            </td>\r\n                            <td>\r\n                                {control.defaultValue !== undefined \r\n                                    ? JSON.stringify(control.defaultValue) \r\n                                    : \"-\"}\r\n                            </td>\r\n                        </tr>\r\n                    ))}\r\n                </tbody>\r\n            </table>\r\n        </div>\r\n    )\r\n}\r\nComponent Usage Example Generator\r\n/**\r\n * @framerDisableUnlink\r\n */\r\nexport default function UsageExampleGenerator(props) {\r\n    const { component, style } = props\r\n    \r\n    // Generate example code based on component properties\r\n    const generateExample = () => {\r\n        const propertyControls = component.propertyControls || {}\r\n        const defaultProps = component.defaultProps || {}\r\n        \r\n        // Generate prop values\r\n        const propValues = Object.entries(propertyControls)\r\n            .map(([name, control]) => {\r\n                const defaultValue = defaultProps[name]\r\n                \r\n                switch (control.type) {\r\n                    case ControlType.String:\r\n                        return `${name}=\"${defaultValue || \"\"}\"`\r\n                    case ControlType.Number:\r\n                        return `${name}={${defaultValue || 0}}`\r\n                    case ControlType.Boolean:\r\n                        return defaultValue ? name : \"\"\r\n                    case ControlType.Color:\r\n                        return `${name}=\"${defaultValue || '#000000'}\"`\r\n                    case ControlType.Enum:\r\n                        return `${name}=\"${defaultValue || control.options[0]}\"`\r\n                    default:\r\n                        return \"\"\r\n                }\r\n            })\r\n            .filter(Boolean)\r\n            .join(\"\\n    \")\r\n        \r\n        return `\r\nimport { ${component.name} } from \"framer\"\r\nexport function MyComponent() {\r\n    return (\r\n        <${component.name}\r\n            ${propValues}\r\n        />\r\n    )\r\n}\r\n`\r\n    }\r\n    \r\n    return (\r\n        <div style={{ ...style, padding: \"20px\" }}>\r\n            <h2>Usage Example</h2>\r\n            <pre style={{\r\n                background: \"#f5f5f5\",\r\n                padding: \"15px\",\r\n                borderRadius: \"4px\",\r\n                overflow: \"auto\"\r\n            }}>\r\n                <code>{generateExample()}</code>\r\n            </pre>\r\n        </div>\r\n    )\r\n}\r\nFinal Implementation Tips\r\n        1.        Component Organization:\r\n// Structure your components with clear sections\r\nexport default function WellOrganizedComponent(props) {\r\n    // 1. Destructure props\r\n    const { data, style, onAction } = props\r\n    \r\n    // 2. State declarations\r\n    const [state, setState] = useState(initial)\r\n    \r\n    // 3. Refs and animations\r\n    const ref = useRef(null)\r\n    const controls = useAnimation()\r\n    \r\n    // 4. Derived values\r\n    const processedData = useMemo(() => {\r\n        return processData(data)\r\n    }, [data])\r\n    \r\n    // 5. Effects\r\n    useEffect(() => {\r\n        // Side effects\r\n    }, [dependencies])\r\n    \r\n    // 6. Event handlers\r\n    const handleAction = useCallback(() => {\r\n        onAction?.()\r\n    }, [onAction])\r\n    \r\n    // 7. Render helpers\r\n    const renderItem = (item) => (\r\n        <div key={item.id}>{item.content}</div>\r\n    )\r\n    \r\n    // 8. Main render\r\n    return (\r\n        <motion.div ref={ref} style={style}>\r\n            {processedData.map(renderItem)}\r\n        </motion.div>\r\n    )\r\n}\r\n        2.        Property Controls Best Practices:\r\naddPropertyControls(Component, {\r\n    // Group related controls\r\n    appearance: {\r\n        type: ControlType.Object,\r\n        title: \"Appearance\",\r\n        controls: {\r\n            color: { type: ControlType.Color },\r\n            radius: { type: ControlType.Number }\r\n        }\r\n    },\r\n    \r\n    // Hide controls conditionally\r\n    advancedOptions: {\r\n        type: ControlType.Object,\r\n        hidden: (props) => !props.showAdvanced,\r\n        controls: {\r\n            // Advanced options here\r\n        }\r\n    },\r\n    \r\n    // Provide clear titles and descriptions\r\n    important: {\r\n        type: ControlType.String,\r\n        title: \"Important Setting\",\r\n        description: \"This affects [important feature].\\n\" +\r\n            \"Learn more about it [here](link).\"\r\n    }\r\n})\r\n\r\n\r\nYour Task:\r\n\r\n\r\nWhen creating Framer components or overrides, you should:\r\n1. Determine the Appropriate Type:\r\n* Code Component for new functionality!!\r\n* Override for modifying existing elements!!\r\n2. Follow Structure:\r\n* Include necessary imports\r\n* Add required annotations\r\n* Implement property controls\r\n* Handle proper prop spreading\r\n* Include TypeScript types\r\n3. Consider Performance:\r\n* Memoize expensive calculations\r\n* Optimize re-renders\r\n* Handle cleanup properly\r\n* Implement error boundaries\r\n4. Add Documentation:\r\n* Include usage examples\r\n* Document property controls\r\n* Add important notes\r\n* Explain limitations\r\n5. Test Implementation:\r\n* Verify in all render targets\r\n* Test edge cases\r\n* Check performance\r\n* Validate responsiveness\r\n\r\n\r\nReply with \"Ready to create Framer code. What would you like me to build?\" if you understand these comprehensive requirements."
           }
         ],
         "react.section0": [
           {
-            "answer": "\fWhat is React?\n Edit this page on Github (https://github.com/fullstackreact/30-days-of-react/blob/master/day-01/post.md)"
+            "answer": "What is React?\n Edit this page on Github (https://github.com/fullstackreact/30-days-of-react/blob/master/day-01/post.md)"
           }
         ],
         "react.section1": [
@@ -652,7 +829,7 @@
         ],
         "react.section3": [
           {
-            "answer": "\fare composable. A component might include one or more other components\nin its output.\nBroadly speaking, to write React apps we write React components that\ncorrespond to various interface elements. We then organize these\ncomponents inside higher-level components which define the structure of\nour application.\nFor example, take a form. A form might consist of many interface elements,\nlike input fields, labels, or buttons. Each element inside the form can be\nwritten as a React component. We'd then write a higher-level component,\nthe form component itself. The form component would specify the structure\nof the form and include each of these interface elements inside of it.\nImportantly, each component in a React app abides by strict data\nmanagement principles. Complex, interactive user interfaces often involve\ncomplex data and application state. The surface area of React is limited and\naimed at giving us the tools to be able to anticipate how our application will\nlook with a given set of circumstances. We dig into these principles later in\nthe course."
+            "answer": "are composable. A component might include one or more other components\nin its output.\nBroadly speaking, to write React apps we write React components that\ncorrespond to various interface elements. We then organize these\ncomponents inside higher-level components which define the structure of\nour application.\nFor example, take a form. A form might consist of many interface elements,\nlike input fields, labels, or buttons. Each element inside the form can be\nwritten as a React component. We'd then write a higher-level component,\nthe form component itself. The form component would specify the structure\nof the form and include each of these interface elements inside of it.\nImportantly, each component in a React app abides by strict data\nmanagement principles. Complex, interactive user interfaces often involve\ncomplex data and application state. The surface area of React is limited and\naimed at giving us the tools to be able to anticipate how our application will\nlook with a given set of circumstances. We dig into these principles later in\nthe course."
           }
         ],
         "react.section4": [
@@ -667,7 +844,7 @@
         ],
         "react.section6": [
           {
-            "answer": "\f<html>\n<head>\n<meta charset=\"utf-8\">\n<title>Hello world</title>\n<!-- Script tags including React -->\n<script\nsrc=\"https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js\"\n></script>\n<script\nsrc=\"https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/reactdom.min.js\"></script>\n<script src=\"https://unpkg.com/babel-standalone@6/babel.min.js\">\n</script>\n</head>\n<body>\n<div id=\"app\"></div>\n<script type=\"text/babel\">\nReactDOM.render(\n<h1>Hello world</h1>,\ndocument.querySelector('#app')\n);\n</script>\n</body>\n</html>"
+            "answer": "<html>\n<head>\n<meta charset=\"utf-8\">\n<title>Hello world</title>\n<!-- Script tags including React -->\n<script\nsrc=\"https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js\"\n></script>\n<script\nsrc=\"https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/reactdom.min.js\"></script>\n<script src=\"https://unpkg.com/babel-standalone@6/babel.min.js\">\n</script>\n</head>\n<body>\n<div id=\"app\"></div>\n<script type=\"text/babel\">\nReactDOM.render(\n<h1>Hello world</h1>,\ndocument.querySelector('#app')\n);\n</script>\n</body>\n</html>"
           }
         ],
         "react.section7": [
